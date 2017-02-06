@@ -1,0 +1,13 @@
+#navigation
+  .navbar {
+    background-color: rgba(129, 164, 204, 1);
+  }
+
+@media (max-width: 1024px) {
+  #navigation
+    .container {
+      margin-left: 0px;
+      margin-right: 0px;
+      width: 100%;
+    }
+}
