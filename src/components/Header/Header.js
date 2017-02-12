@@ -1,13 +1,11 @@
 import React from 'react'
 import {IndexLink, Link} from 'react-router'
-import './Header.scss'
-import Slider from '../Slider/Slider'
+import './Header.sass'
 
 export const Header = () => (
   <div id="header" className="site-wrapper">
     <div className="site-wrapper-inner">
       <div className="cover-container">
-
         <nav id="navigation" className="navbar navbar-toggleable-md navbar-inverse fixed-top">
           <div className="container">
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,17 +37,16 @@ export const Header = () => (
         <div className="inner cover">
           <h1 className="cover-heading">Сантехника для загородного дома</h1>
           <p className="lead">
-            Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке
+            Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев
           </p>
           <p className="lead">
-            <a href="#" className="btn btn-lg btn-primary">Задать вопрос</a>
+            <a href="#" className="btn btn-lg btn-outline-secondary"><i className="fa fa-pencil fa-fw"></i> Задать вопрос</a>
           </p>
         </div>
 
         <div className="mastfoot">
           <div className="inner">
-            <p>Cover template for <a href="https://getbootstrap.com">Bootstrap</a>, by <a
-              href="https://twitter.com/mdo">@mdo</a>.</p>
+            <a href="#service" className="arrow bounce"></a>
           </div>
         </div>
 
