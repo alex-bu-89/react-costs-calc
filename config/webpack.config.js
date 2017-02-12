@@ -143,7 +143,7 @@ webpackConfig.module.loaders = [{
 const BASE_CSS_LOADER = 'css?sourceMap&-minimize'
 
 webpackConfig.module.loaders.push({
-  test    : /\.scss$/,
+  test    : /\.sass$/,
   exclude : null,
   loaders : [
     'style',
@@ -163,6 +163,7 @@ webpackConfig.module.loaders.push({
 })
 
 webpackConfig.sassLoader = {
+  data: '@import "../styles/_base.sass";',
   includePaths : project.paths.client('styles')
 }
 
