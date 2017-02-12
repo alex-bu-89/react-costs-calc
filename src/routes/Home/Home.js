@@ -12,6 +12,12 @@ import img6 from './assets/6.jpg'
 import img7 from './assets/7.jpg'
 import img8 from './assets/8.jpg'
 
+import imgp0 from './assets/p0.jpg'
+import imgp1 from './assets/p1.jpg'
+import imgp2 from './assets/p2.jpg'
+import imgp3 from './assets/p3.jpg'
+import imgp4 from './assets/p4.jpg'
+
 export const HomeView = () => (
   <div className="marketing">
 
@@ -34,28 +40,28 @@ export const HomeView = () => (
             <img className="rounded"
                  src={ img1 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small class="text-muted">Монтаж контура</small></h4>
+            <h4><small className="text-muted">Монтаж контура</small></h4>
             <p className="small">Монтаж теплого контура при строительстве фундамента по технологии утепленная шведская плита (УШП)</p>
           </div>
           <div className="col-lg-3 col-md-4 service-box">
             <img className="rounded"
                  src={ img2 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small class="text-muted">Монтаж канализаций</small></h4>
+            <h4><small className="text-muted">Монтаж канализаций</small></h4>
             <p className="small">Монтаж автономных канализаций СБО (станция биологической очистки)</p>
           </div>
           <div className="col-lg-3 col-md-4 service-box">
             <img className="rounded"
                  src={ img3 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small class="text-muted">Монтаж водоподготовки</small></h4>
+            <h4><small className="text-muted">Монтаж водоподготовки</small></h4>
             <p className="small">Монтаж систем водоподготовки (системы фильтрации)</p>
           </div>
           <div className="col-lg-3 col-md-4 service-box">
             <img className="rounded"
                  src={ img4 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small class="text-muted">Монтаж котельной</small></h4>
+            <h4><small className="text-muted">Монтаж котельной</small></h4>
             <p className="small">Монтаж автономных котельных в загородных домах (дизельные, газовые, электрические, твердотопливные
               котлы)</p>
           </div>
@@ -63,28 +69,28 @@ export const HomeView = () => (
             <img className="rounded"
                  src={ img5 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small class="text-muted">Монтаж теплых полов</small></h4>
+            <h4><small className="text-muted">Монтаж теплых полов</small></h4>
             <p className="small">Монтаж теплых полов</p>
           </div>
           <div className="col-lg-3 col-md-4 service-box">
             <img className="rounded"
                  src={ img6 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small class="text-muted">Монтаж отопления</small></h4>
+            <h4><small className="text-muted">Монтаж отопления</small></h4>
             <p className="small">Монтаж радиаторного отопления</p>
           </div>
           <div className="col-lg-3 col-md-4 service-box">
             <img className="rounded"
                  src={ img7 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small class="text-muted">Водоснабжение и канализация</small></h4>
+            <h4><small className="text-muted">Водоснабжение и канализация</small></h4>
             <p className="small">Все виды работ по водоснабжению и канализации в загородных домах и квартирах</p>
           </div>
           <div className="col-lg-3 col-md-4 service-box">
             <img className="rounded"
                  src={ img8 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small class="text-muted">Доставка</small></h4>
+            <h4><small className="text-muted">Доставка</small></h4>
             <p className="small">Мы располагаем собственным транспортом, осуществляем доставку материала до заказчика</p>
           </div>
         </div>
@@ -93,7 +99,7 @@ export const HomeView = () => (
 
     {/* ------ PORTFOLIO ------ */}
     <section id="portfolio">
-      <div className="container">
+      <div className="container mb20">
         <div className="row">
           <div className="col-lg-12 text-center">
             <h2 className="section-heading">Наши работы</h2>
@@ -102,36 +108,81 @@ export const HomeView = () => (
         </div>
       </div>
 
-      <div class="container-fluid">
-        <div class="row no-gutter popup-gallery">
-          <div class="col-lg-4 col-sm-6">
-            <a href="img/portfolio/fullsize/1.jpg" class="portfolio-box">
-              <img src="img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="" />
-                <div class="portfolio-box-caption">
-                  <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
+      <div className="container-fluid">
+        <div className="row no-gutter popup-gallery">
+          <div className="col-lg-4 col-sm-6">
+            <a href="" className="portfolio-box">
+              <img src= { imgp0 } className="img-responsive" alt="" />
+                <div className="portfolio-box-caption">
+                  <div className="portfolio-box-caption-content">
+                    <div className="project-category text-faded">
                       Category
                     </div>
-                    <div class="project-name">
+                    <div className="project-name">
                       Project Name
                     </div>
                   </div>
                 </div>
             </a>
           </div>
-          <div class="col-lg-4 col-sm-6">
-            <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
-              <img src="img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="" />
-                <div class="portfolio-box-caption">
-                  <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
+          <div className="col-lg-4 col-sm-6">
+            <a href="img/portfolio/fullsize/2.jpg" className="portfolio-box">
+              <img src={ imgp1 } className="img-responsive" alt="" />
+                <div className="portfolio-box-caption">
+                  <div className="portfolio-box-caption-content">
+                    <div className="project-category text-faded">
                       Category
                     </div>
-                    <div class="project-name">
+                    <div className="project-name">
                       Project Name
                     </div>
                   </div>
                 </div>
+            </a>
+          </div>
+          <div className="col-lg-4 col-sm-6">
+            <a href="img/portfolio/fullsize/2.jpg" className="portfolio-box">
+              <img src={ imgp2 } className="img-responsive" alt="" />
+                <div className="portfolio-box-caption">
+                  <div className="portfolio-box-caption-content">
+                    <div className="project-category text-faded">
+                      Category
+                    </div>
+                    <div className="project-name">
+                      Project Name
+                    </div>
+                  </div>
+                </div>
+            </a>
+          </div>
+          <div className="col-lg-4 col-sm-6">
+            <a href="img/portfolio/fullsize/2.jpg" className="portfolio-box">
+              <img src={ imgp3 } className="img-responsive" alt="" />
+              <div className="portfolio-box-caption">
+                <div className="portfolio-box-caption-content">
+                  <div className="project-category text-faded">
+                    Category
+                  </div>
+                  <div className="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div className="col-lg-4 col-sm-6">
+            <a href="img/portfolio/fullsize/2.jpg" className="portfolio-box">
+              <img src={ imgp4 } className="img-responsive" alt="" />
+              <div className="portfolio-box-caption">
+                <div className="portfolio-box-caption-content">
+                  <div className="project-category text-faded">
+                    Category
+                  </div>
+                  <div className="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
             </a>
           </div>
         </div>
