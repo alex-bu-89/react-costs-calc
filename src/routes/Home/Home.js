@@ -2,6 +2,7 @@ import React from 'react'
 import './Home.sass'
 import Footer from '../../components/Footer/'
 import Calculator from '../../components/Calculator/'
+import Portfolio from '../../components/Portfolio/'
 
 import img1 from './assets/1.jpg'
 import img2 from './assets/2.jpg'
@@ -11,12 +12,6 @@ import img5 from './assets/5.jpg'
 import img6 from './assets/6.jpg'
 import img7 from './assets/7.jpg'
 import img8 from './assets/8.jpg'
-
-import imgp0 from './assets/p0.jpg'
-import imgp1 from './assets/p1.jpg'
-import imgp2 from './assets/p2.jpg'
-import imgp3 from './assets/p3.jpg'
-import imgp4 from './assets/p4.jpg'
 
 export const HomeView = () => (
   <div className="marketing">
@@ -98,97 +93,8 @@ export const HomeView = () => (
     </section>
 
     {/* ------ PORTFOLIO ------ */}
-    <section id="portfolio">
-      <div className="container mb20">
-        <div className="row">
-          <div className="col-lg-12 text-center">
-            <h2 className="section-heading">Наши работы</h2>
-            <hr className="primary" />
-          </div>
-        </div>
-      </div>
+    <Portfolio />
 
-      <div className="container-fluid">
-        <div className="row no-gutter popup-gallery">
-          <div className="col-lg-4 col-sm-6">
-            <a href="" className="portfolio-box">
-              <img src= { imgp0 } className="img-responsive" alt="" />
-                <div className="portfolio-box-caption">
-                  <div className="portfolio-box-caption-content">
-                    <div className="project-category text-faded">
-                      Category
-                    </div>
-                    <div className="project-name">
-                      Project Name
-                    </div>
-                  </div>
-                </div>
-            </a>
-          </div>
-          <div className="col-lg-4 col-sm-6">
-            <a href="img/portfolio/fullsize/2.jpg" className="portfolio-box">
-              <img src={ imgp1 } className="img-responsive" alt="" />
-                <div className="portfolio-box-caption">
-                  <div className="portfolio-box-caption-content">
-                    <div className="project-category text-faded">
-                      Category
-                    </div>
-                    <div className="project-name">
-                      Project Name
-                    </div>
-                  </div>
-                </div>
-            </a>
-          </div>
-          <div className="col-lg-4 col-sm-6">
-            <a href="img/portfolio/fullsize/2.jpg" className="portfolio-box">
-              <img src={ imgp2 } className="img-responsive" alt="" />
-                <div className="portfolio-box-caption">
-                  <div className="portfolio-box-caption-content">
-                    <div className="project-category text-faded">
-                      Category
-                    </div>
-                    <div className="project-name">
-                      Project Name
-                    </div>
-                  </div>
-                </div>
-            </a>
-          </div>
-          <div className="col-lg-4 col-sm-6">
-            <a href="img/portfolio/fullsize/2.jpg" className="portfolio-box">
-              <img src={ imgp3 } className="img-responsive" alt="" />
-              <div className="portfolio-box-caption">
-                <div className="portfolio-box-caption-content">
-                  <div className="project-category text-faded">
-                    Category
-                  </div>
-                  <div className="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div className="col-lg-4 col-sm-6">
-            <a href="img/portfolio/fullsize/2.jpg" className="portfolio-box">
-              <img src={ imgp4 } className="img-responsive" alt="" />
-              <div className="portfolio-box-caption">
-                <div className="portfolio-box-caption-content">
-                  <div className="project-category text-faded">
-                    Category
-                  </div>
-                  <div className="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </section>
     {/*<hr className="featurette-divider" />
 
      <div className="row featurette">
