@@ -51,92 +51,13 @@ class Portfolio extends Component {
 
         <div className="container-fluid">
           <div className="row no-gutter popup-gallery">
-
             {
               portfolio.map((item, i) => {
                 return <PortfolioItems item={item} key={i}/>
               })
             }
-
-            {/*<div className="col-lg-4 col-sm-6">
-             <a href="" className="portfolio-box">
-             <img src={ imgp0 } className="img-responsive" alt=""/>
-             <div className="portfolio-box-caption">
-             <div className="portfolio-box-caption-content">
-             <div className="project-category text-faded">
-             Category
-             </div>
-             <div className="project-name">
-             Project Name
-             </div>
-             </div>
-             </div>
-             </a>
-             </div>
-
-             <div className="col-lg-4 col-sm-6">
-             <a href="" className="portfolio-box">
-             <img src={ imgp1 } className="img-responsive" alt=""/>
-             <div className="portfolio-box-caption">
-             <div className="portfolio-box-caption-content">
-             <div className="project-category text-faded">
-             Category
-             </div>
-             <div className="project-name">
-             Project Name
-             </div>
-             </div>
-             </div>
-             </a>
-             </div>
-             <div className="col-lg-4 col-sm-6">
-             <a href="" className="portfolio-box">
-             <img src={ imgp2 } className="img-responsive" alt=""/>
-             <div className="portfolio-box-caption">
-             <div className="portfolio-box-caption-content">
-             <div className="project-category text-faded">
-             Category
-             </div>
-             <div className="project-name">
-             Project Name
-             </div>
-             </div>
-             </div>
-             </a>
-             </div>
-             <div className="col-lg-4 col-sm-6">
-             <a href="" className="portfolio-box">
-             <img src={ imgp3 } className="img-responsive" alt=""/>
-             <div className="portfolio-box-caption">
-             <div className="portfolio-box-caption-content">
-             <div className="project-category text-faded">
-             Category
-             </div>
-             <div className="project-name">
-             Project Name
-             </div>
-             </div>
-             </div>
-             </a>
-             </div>
-             <div className="col-lg-4 col-sm-6">
-             <a href="" className="portfolio-box">
-             <img src={ imgp4 } className="img-responsive" alt=""/>
-             <div className="portfolio-box-caption">
-             <div className="portfolio-box-caption-content">
-             <div className="project-category text-faded">
-             Category
-             </div>
-             <div className="project-name">
-             Project Name
-             </div>
-             </div>
-             </div>
-             </a>
-             </div>*/}
           </div>
         </div>
-
       </section>
     )
   }
