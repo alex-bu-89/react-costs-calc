@@ -5,7 +5,6 @@ class PortfolioItems extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = { showSlider: false }
     this.item = this.props.item
     this._openSlider = this._openSlider.bind(this)
@@ -18,7 +17,6 @@ class PortfolioItems extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="col-lg-4 col-sm-6" key={ this.item.key }>
         <div href="" className="portfolio-box" onClick={ this._openSlider }>
@@ -43,13 +41,12 @@ class PortfolioItems extends Component {
                   <Slider images={ this.item.images } />
                 </div>
               </div>
-            : null }
-
+            : null
+          }
         </div>
       </div>
     )
   }
-
 }
 
 PortfolioItems.propTypes = {
