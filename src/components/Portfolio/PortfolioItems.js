@@ -8,36 +8,52 @@ class PortfolioItems extends Component {
     this.state = { showSlider: false }
     this.item = this.props.item
     this._openSlider = this._openSlider.bind(this)
+    this._closeSlider = this._closeSlider.bind(this)
   }
 
-  _openSlider() {
-    this.setState({
-      showSlider: true,
-    });
+  componentDidUpdate(nextProps, nextState) {
+    console.log(nextState);
+  }
+
+  _openSlider(e) {
+    e.stopPropagation()
+    console.log('_openSlider');
+    this.setState({ showSlider: true })
+  }
+
+  _closeSlider(e) {
+    e.stopPropagation()
+    console.log('_closeSlider');
+    this.setState({ showSlider: false })
   }
 
   render() {
     return (
-      <div className="col-lg-4 col-sm-6" key={ this.item.key }>
-        <div href="" className="portfolio-box" onClick={ this._openSlider }>
+      <div className="col-lg-4 col-sm-6">
+        <div className="portfolio__box">
 
           { /* ITEM */ }
-          <img src={ this.item.img_mini } className="img-responsive" alt=""/>
-          <div className="portfolio-box-caption">
-            <div className="portfolio-box-caption-content">
-              <div className="project-category text-faded">
-                { this.item.category }
-              </div>
-              <div className="project-name">
-                { this.item.project_name }
+          <section onClick={ this._openSlider }>
+            <img src={ this.item.img_mini } className="img-responsive" alt=""/>
+            <div className="portfolio__box--caption">
+              <div className="portfolio__box--caption-content">
+                <div className="portfolio__project-category">
+                  { this.item.category }
+                </div>
+                <div className="portfolio__project-name">
+                  { this.item.project_name }
+                </div>
               </div>
             </div>
-          </div>
+          </section>
 
           { /* SLIDER */ }
           { this.state.showSlider
-            ? <div className="slider-box">
-                <div className="slider-box-wrapper">
+            ? <div className="portfolio-slider">
+                <div className="portfolio-slider__wrapper">
+                  <button type="button" className="portfolio-slider__close-button close" aria-label="Close" onClick={ this._closeSlider }>
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                   <Slider images={ this.item.images } />
                 </div>
               </div>

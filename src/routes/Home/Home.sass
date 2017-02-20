@@ -1,6 +1,6 @@
 .marketing
 
-  section
+  > section
     padding: 60px 0
 
   hr
@@ -19,44 +19,3 @@
     img
       display: block
       margin: 15px auto
-
-#portfolio
-
-  img
-    display: block
-    max-width: 100%
-    height: auto
-
-  .no-gutter > [class*=col-]
-    padding-right: 0
-    padding-left: 0
-    margin: 0
-
-  .portfolio-box
-    align-items: center
-    display: flex
-
-    .portfolio-box-caption
-      color: #fff
-      opacity: 0
-      display: block
-      background: rgba(240,95,64,.9)
-      position: absolute
-      bottom: 0
-      text-align: center
-      width: 100%
-      height: 100%
-      transition: all .35s
-      -webkit-transition: all .35s
-      -moz-transition: all .35s
-
-      .portfolio-box-caption-content
-        width: 100%
-        text-align: center
-        position: absolute
-        top: 50%
-        transform: translateY(-50%)
-
-    &:hover
-      .portfolio-box-caption
-        opacity: 1

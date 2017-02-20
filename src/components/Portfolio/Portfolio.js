@@ -11,6 +11,7 @@ import imgp4 from './assets/p4.jpg'
 class Portfolio extends Component {
 
   render() {
+
     const portfolio = [
       {
         category: 'Category',
@@ -36,7 +37,7 @@ class Portfolio extends Component {
     ]
 
     return (
-      <section id="portfolio">
+      <section id="portfolio" className="portfolio">
         <div className="container mb20">
           <div className="row">
             <div className="col-lg-12 text-center">

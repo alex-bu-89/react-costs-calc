@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './Slider.sass'
 
 class Slider extends Component {
 

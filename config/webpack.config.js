@@ -152,6 +152,7 @@ webpackConfig.module.loaders.push({
     'sass?sourceMap'
   ]
 })
+
 webpackConfig.module.loaders.push({
   test    : /\.css$/,
   exclude : null,

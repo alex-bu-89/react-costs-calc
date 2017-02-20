@@ -1,8 +1,38 @@
-.slider-box
-  position: fixed
-  top: 0px
-  left: 0px
-  height: 100%
-  width: 100%
-  background: #fff
-  z-index: 1000
+.portfolio
+  img
+    display: block
+    max-width: 100%
+    height: auto
+
+  .no-gutter > [class*=col-]
+    padding-right: 0
+    padding-left: 0
+    margin: 0
+
+  &__box
+    align-items: center
+    display: flex
+
+    &--caption
+      color: #fff
+      opacity: 0
+      display: block
+      background: rgba(240,95,64,.9)
+      position: absolute
+      bottom: 0
+      text-align: center
+      width: 100%
+      height: 100%
+      transition: all .35s
+      -webkit-transition: all .35s
+      -moz-transition: all .35s
+
+      &-content
+        width: 100%
+        text-align: center
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+
+      &:hover
+        opacity: 1
