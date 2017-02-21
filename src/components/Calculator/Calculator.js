@@ -2,7 +2,7 @@ import React from 'react'
 import './Calculator.sass'
 
 export const Calculator = () => (
-  <section id="calculator">
+  <section id="calculator" name="calculator">
     <div className="container">
       <div className="row">
         <div className="col-lg-12 text-center">

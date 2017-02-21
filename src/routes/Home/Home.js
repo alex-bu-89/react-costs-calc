@@ -20,7 +20,7 @@ export const HomeView = () => (
     <Calculator />
 
     {/* ------ SERVICE ------ */}
-    <section id="service">
+    <section id="service" name="service">
       <div className="container">
         <div className="row">
           <div className="col-lg-12 text-center">

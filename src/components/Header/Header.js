@@ -1,5 +1,5 @@
 import React from 'react'
-import {IndexLink, Link} from 'react-router'
+import { Link } from 'react-scroll'
 import './Header.sass'
 
 export const Header = () => (
@@ -46,7 +46,9 @@ export const Header = () => (
 
         <div className="mastfoot">
           <div className="inner">
-            <a href="#service" className="arrow bounce"></a>
+            <Link activeClass="active" to="calculator" spy={true} smooth={true} offset={50} duration={1000}>
+              <span className="arrow bounce"></span>
+            </Link>
           </div>
         </div>
 

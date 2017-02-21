@@ -7,23 +7,23 @@ class PortfolioItems extends Component {
     super(props);
     this.state = { showSlider: false }
     this.item = this.props.item
-    this._openSlider = this._openSlider.bind(this)
-    this._closeSlider = this._closeSlider.bind(this)
   }
 
   componentDidUpdate(nextProps, nextState) {
     console.log(nextState);
   }
 
-  _openSlider(e) {
+  openSlider(e) {
     e.stopPropagation()
     console.log('_openSlider');
+    document.body.classList.add('no-scroll') // TODO refactor
     this.setState({ showSlider: true })
   }
 
-  _closeSlider(e) {
+  closeSlider(e) {
     e.stopPropagation()
     console.log('_closeSlider');
+    document.body.classList.remove('no-scroll') // TODO refactor
     this.setState({ showSlider: false })
   }
 
@@ -33,7 +33,7 @@ class PortfolioItems extends Component {
         <div className="portfolio__box">
 
           { /* ITEM */ }
-          <section onClick={ this._openSlider }>
+          <section onClick={ this.openSlider.bind(this) }>
             <img src={ this.item.img_mini } className="img-responsive" alt=""/>
             <div className="portfolio__box--caption">
               <div className="portfolio__box--caption-content">
@@ -49,14 +49,8 @@ class PortfolioItems extends Component {
 
           { /* SLIDER */ }
           { this.state.showSlider
-            ? <div className="portfolio-slider">
-                <div className="portfolio-slider__wrapper">
-                  <button type="button" className="portfolio-slider__close-button close" aria-label="Close" onClick={ this._closeSlider }>
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                  <Slider images={ this.item.images } />
-                </div>
-              </div>
+            ? <Slider images={ this.item.images }
+                      closeSlider={ this.closeSlider.bind(this) }/>
             : null
           }
         </div>
