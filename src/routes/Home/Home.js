@@ -3,6 +3,7 @@ import './Home.sass'
 import Footer from '../../components/Footer/'
 import Calculator from '../../components/Calculator/'
 import Portfolio from '../../components/Portfolio/'
+import About from '../../components/About/'
 
 import img1 from './assets/1.jpg'
 import img2 from './assets/2.jpg'
@@ -95,29 +96,7 @@ export const HomeView = () => (
     {/* ------ PORTFOLIO ------ */}
     <Portfolio />
 
-    {/*<hr className="featurette-divider" />
-
-     <div className="row featurette">
-     <div className="col-md-7">
-     <h2 className="featurette-heading">First featurette heading. <span className="text-muted">It'll blow your mind.</span></h2>
-     <p className="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-     </div>
-     <div className="col-md-4">
-     <img className="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image" />
-     </div>
-     </div>
-
-     <hr className="featurette-divider" />
-
-     <div className="row featurette">
-     <div className="col-md-7 push-md-5">
-     <h2 className="featurette-heading">Oh yeah, it's that good. <span className="text-muted">See for yourself.</span></h2>
-     <p className="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-     </div>
-     <div className="col-md-4 pull-md-7">
-     <img className="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image" />
-     </div>
-     </div>*/}
+    <About />
 
     <Footer />
 
