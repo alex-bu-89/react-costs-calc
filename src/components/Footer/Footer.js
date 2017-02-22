@@ -9,21 +9,21 @@ export const Header = () => (
           <form name="contactForm" id="contactForm" method="post" action="">
             <fieldset>
               <div>
-                <label for="contactName">Имя <span className="required">*</span></label>
+                <label htmlFor="contactName">Имя <span className="required">*</span></label>
                 <input name="contactName" type="text" id="contactName" size="35" value="" />
               </div>
               <div>
-                <label for="contactEmail">Email <span className="required">*</span></label>
+                <label htmlFor="contactEmail">Email <span className="required">*</span></label>
                 <input name="contactEmail" type="text" id="contactEmail" size="35" value="" />
               </div>
 
               <div>
-                <label for="contactSubject">Тема</label>
+                <label htmlFor="contactSubject">Тема</label>
                 <input name="contactSubject" type="text" id="contactSubject" size="35" value="" />
               </div>
 
               <div>
-                <label for="contactMessage">Сообщение <span className="required">*</span></label>
+                <label htmlFor="contactMessage">Сообщение <span className="required">*</span></label>
                 <textarea name="contactMessage" id="contactMessage" rows="5" cols="30"></textarea>
               </div>
 
