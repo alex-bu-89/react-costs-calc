@@ -1,7 +1,7 @@
 // HEADER
 // -------------------------
 #header
-  background: rgba(0, 0, 0, 0.25) url('./assets/bg-2.jpg') center center no-repeat
+  background: rgba(0, 0, 0, 0.25) url('./assets/bg.jpg') center center no-repeat
   background-size: cover
   color: #fff
   text-align: center
@@ -21,13 +21,17 @@
     right: 0
     bottom: 0
     left: 0
-    background-image: linear-gradient(to bottom right,#002f4b,#dc4225)
+    background-image: linear-gradient(to bottom right,#002f4b,$primary-color)
     opacity: .6
 
   a,
   a:focus,
   a:hover
     color: #fff
+
+  .btn-outline-secondary:hover
+    background-color: $primary-color
+    border-color: $primary-color-dark
 
   #navigation
     margin-top: 1rem

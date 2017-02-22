@@ -18,19 +18,18 @@ class About extends Component {
             </div>
             <ul className="timeline">
               <li>
-                <div className="timeline-badge"><i className="glyphicon glyphicon-check"></i></div>
+                <div className="timeline-badge"><i className="fa fa-lw fa-clock-o" aria-hidden="true"></i></div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">
                     <h4 className="timeline-title">2007 год</h4>
-                    <p><small className="text-muted"><i className="glyphicon glyphicon-time"></i> 2007 год</small></p>
                   </div>
                   <div className="timeline-body">
-                    <p>Началом деятельности можно считать 2007 год, когда несколько человек ушли из компании Сантехмастер и начали работать самостоятельно. Основной деятельностью было оказание услуг по сантехнике в Ленинградской области – отопление, водоснабжение, канализация в частных домах и квартирах.</p>
+                    <p className="small">Началом деятельности можно считать 2007 год, когда несколько человек ушли из компании Сантехмастер и начали работать самостоятельно. Основной деятельностью было оказание услуг по сантехнике в Ленинградской области – отопление, водоснабжение, канализация в частных домах и квартирах.</p>
                   </div>
                 </div>
               </li>
               <li className="timeline-inverted">
-                <div className="timeline-badge warning"><i className="glyphicon glyphicon-credit-card"></i></div>
+                <div className="timeline-badge"><i className="fa fa-lw fa-shopping-cart" aria-hidden="true"></i></div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">
                     <h4 className="timeline-title">2008 год</h4>
@@ -41,7 +40,7 @@ class About extends Component {
                 </div>
               </li>
               <li>
-                <div className="timeline-badge"><i className="glyphicon glyphicon-check"></i></div>
+                <div className="timeline-badge"><i className="fa fa-lw fa-handshake-o" aria-hidden="true"></i></div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">
                     <h4 className="timeline-title">2009 год</h4>
@@ -52,7 +51,7 @@ class About extends Component {
                 </div>
               </li>
               <li className="timeline-inverted">
-                <div className="timeline-badge warning"><i className="glyphicon glyphicon-credit-card"></i></div>
+                <div className="timeline-badge"><i className="fa fa-lw fa-check" aria-hidden="true"></i></div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">
                     <h4 className="timeline-title">2015 год</h4>
