@@ -36,28 +36,28 @@ export const HomeView = () => (
             <img className="rounded"
                  src={ img1 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small className="text-muted">Монтаж контура</small></h4>
+            <h6>Монтаж контура</h6>
             <p className="small">Монтаж теплого контура при строительстве фундамента по технологии утепленная шведская плита (УШП)</p>
           </div>
           <div className="col-lg-3 col-md-4 service-box">
             <img className="rounded"
                  src={ img2 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small className="text-muted">Монтаж канализаций</small></h4>
+            <h6>Монтаж канализаций</h6>
             <p className="small">Монтаж автономных канализаций СБО (станция биологической очистки)</p>
           </div>
           <div className="col-lg-3 col-md-4 service-box">
             <img className="rounded"
                  src={ img3 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small className="text-muted">Монтаж водоподготовки</small></h4>
+            <h6>Монтаж водоподготовки</h6>
             <p className="small">Монтаж систем водоподготовки (системы фильтрации)</p>
           </div>
           <div className="col-lg-3 col-md-4 service-box">
             <img className="rounded"
                  src={ img4 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small className="text-muted">Монтаж котельной</small></h4>
+            <h6>Монтаж котельной</h6>
             <p className="small">Монтаж автономных котельных в загородных домах (дизельные, газовые, электрические, твердотопливные
               котлы)</p>
           </div>
@@ -65,28 +65,28 @@ export const HomeView = () => (
             <img className="rounded"
                  src={ img5 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small className="text-muted">Монтаж теплых полов</small></h4>
+            <h6>Монтаж теплых полов</h6>
             <p className="small">Монтаж теплых полов</p>
           </div>
           <div className="col-lg-3 col-md-4 service-box">
             <img className="rounded"
                  src={ img6 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small className="text-muted">Монтаж отопления</small></h4>
+            <h6>Монтаж отопления</h6>
             <p className="small">Монтаж радиаторного отопления</p>
           </div>
           <div className="col-lg-3 col-md-4 service-box">
             <img className="rounded"
                  src={ img7 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small className="text-muted">Водоснабжение и канализация</small></h4>
+            <h6>Водоснабжение и канализация</h6>
             <p className="small">Все виды работ по водоснабжению и канализации в загородных домах и квартирах</p>
           </div>
           <div className="col-lg-3 col-md-4 service-box">
             <img className="rounded"
                  src={ img8 }
                  alt="Generic placeholder image" width="140" height="140"/>
-            <h4><small className="text-muted">Доставка</small></h4>
+            <h6>Доставка</h6>
             <p className="small">Мы располагаем собственным транспортом, осуществляем доставку материала до заказчика</p>
           </div>
         </div>
