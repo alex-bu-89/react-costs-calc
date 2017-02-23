@@ -33,7 +33,28 @@ class Portfolio extends Component {
         description: 'Гатчинский район. Репполово. Частный дом. Монтаж котельной, водоподготовка.',
         img_mini: imgp2,
         images: [imgp2, imgp2, imgp2]
-      }
+      },
+      {
+        category: 'Category',
+        project_name: 'Project 3',
+        description: 'Гатчинский район. Репполово. Частный дом. Монтаж котельной, водоподготовка.',
+        img_mini: imgp2,
+        images: [imgp2, imgp2, imgp2]
+      },
+      {
+        category: 'Category',
+        project_name: 'Project 1',
+        description: 'Гатчинский район. Репполово. Частный дом. Монтаж котельной, водоподготовка.',
+        img_mini: imgp0,
+        images: [imgp0, imgp0, imgp0]
+      },
+      {
+        category: 'Category',
+        project_name: 'Project 2',
+        description: 'Гатчинский район. Репполово. Частный дом. Монтаж котельной, водоподготовка.',
+        img_mini: imgp1,
+        images: [imgp1, imgp1, imgp1]
+      }     
     ]
 
     return (
