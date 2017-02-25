@@ -5,7 +5,7 @@ class Footer extends Component {
 
   constructor(props) {
     super(props)
-    this.year = new Date().getFullYear();
+    this.year = new Date().getFullYear()
   }
 
   render() {
@@ -40,7 +40,7 @@ class Footer extends Component {
                 <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
-                <strong>Спасибо.</strong> Ваше сообщение было успешно отправлено. 
+                <strong>Спасибо.</strong> Ваше сообщение было успешно отправлено.
               </div>
             </div>
             <aside className="col">
