@@ -10,7 +10,7 @@ class Footer extends Component {
 
   render() {
     return(
-      <footer>
+      <footer id="contacts" name="contacts">
         <div className="container">
           <div className="row">
             <div className="col">

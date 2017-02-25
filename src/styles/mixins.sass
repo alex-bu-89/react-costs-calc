@@ -8,6 +8,12 @@
   @keyframes #{$name}
     @content
 
+=transition($transition...)
+  -moz-transition:    $transition
+  -o-transition:      $transition
+  -webkit-transition: $transition
+  transition:         $transition
+
 @mixin background-opacity($color, $opacity: 0.3)
   background: $color
   background: rgba($color, $opacity)
