@@ -12,7 +12,7 @@
     left: 0px
     height: 100%
     width: 100%
-    background: rgba(251, 251, 251, 0.9)
+    background: rgba(0, 0, 0, 0.9)
     z-index: 650
 
   &__close-button
@@ -23,6 +23,7 @@
       font-size: 30px
       padding: 20px 30px
       display: block
+      color: #fff
 
   &__wrapper
     width: 60%
@@ -32,9 +33,25 @@
     transform: translate(-50%,-50%)
     z-index: 675
 
+  .carousel
+    &:focus
+      outline: 0
+
   .carousel-item
     width: 100%
 
   .carousel-item > img
     object-fit: cover
     width: 100%
+
+  .carousel-indicators
+    margin-bottom: -3rem
+
+    &:focus
+      outline: 0
+
+  .carousel-control-next
+    right: -100px
+
+  .carousel-control-prev
+    left: -100px

@@ -57,7 +57,7 @@ class Portfolio extends Component {
 
   render() {
     return (
-      <section id="portfolio" name="portfolio" className="portfolio">
+      <section id="portfolio" name="portfolio" className="portfolio no-pb">
         <div className="container mb20">
           <div className="row">
             <div className="col-lg-12 text-center">
