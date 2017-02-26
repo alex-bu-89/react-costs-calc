@@ -40,13 +40,11 @@ class Header extends Component {
       isShowing = true
       if (this.state.showFixMenu !== isShowing){
         this.setState({ showFixMenu: isShowing })
-        console.log('SHOW!');
       }
     } else {
       isShowing = false
       if (this.state.showFixMenu !== isShowing){
         this.setState({ showFixMenu: isShowing })
-        console.log('HIDE!');
       }
     }
   }
