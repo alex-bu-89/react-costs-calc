@@ -15,79 +15,79 @@ import img7 from './assets/7.jpg'
 import img8 from './assets/8.jpg'
 
 export const HomeView = () => (
-  <div className="marketing">
+  <div className='marketing'>
 
     {/* ------ COSTS CALC ------ */}
     <Calculator />
 
     {/* ------ SERVICE ------ */}
-    <section id="service" name="service">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12 text-center">
-            <h2 className="section-heading">Наши услуги</h2>
-            <hr className="primary" />
+    <section id='service' name='service'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-lg-12 text-center'>
+            <h2 className='section-heading'>Наши услуги</h2>
+            <hr className='primary' />
           </div>
         </div>
       </div>
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-3 col-md-4 service-box">
-            <img className="rounded"
+      <div className='container'>
+        <div className='row'>
+          <div className='col-lg-3 col-md-4 service-box'>
+            <img className='rounded'
                  src={ img1 }
-                 alt="Generic placeholder image" width="140" height="140"/>
+                 alt='Generic placeholder image' width='140' height='140'/>
             <h6>Монтаж контура</h6>
-            <p className="small">Монтаж теплого контура при строительстве фундамента по технологии утепленная шведская плита (УШП)</p>
+            <p className='small'>Монтаж теплого контура при строительстве фундамента по технологии утепленная шведская плита (УШП)</p>
           </div>
-          <div className="col-lg-3 col-md-4 service-box">
-            <img className="rounded"
+          <div className='col-lg-3 col-md-4 service-box'>
+            <img className='rounded'
                  src={ img2 }
-                 alt="Generic placeholder image" width="140" height="140"/>
+                 alt='Generic placeholder image' width='140' height='140'/>
             <h6>Монтаж канализаций</h6>
-            <p className="small">Монтаж автономных канализаций СБО (станция биологической очистки)</p>
+            <p className='small'>Монтаж автономных канализаций СБО (станция биологической очистки)</p>
           </div>
-          <div className="col-lg-3 col-md-4 service-box">
-            <img className="rounded"
+          <div className='col-lg-3 col-md-4 service-box'>
+            <img className='rounded'
                  src={ img3 }
-                 alt="Generic placeholder image" width="140" height="140"/>
+                 alt='Generic placeholder image' width='140' height='140'/>
             <h6>Монтаж водоподготовки</h6>
-            <p className="small">Монтаж систем водоподготовки (системы фильтрации)</p>
+            <p className='small'>Монтаж систем водоподготовки (системы фильтрации)</p>
           </div>
-          <div className="col-lg-3 col-md-4 service-box">
-            <img className="rounded"
+          <div className='col-lg-3 col-md-4 service-box'>
+            <img className='rounded'
                  src={ img4 }
-                 alt="Generic placeholder image" width="140" height="140"/>
+                 alt='Generic placeholder image' width='140' height='140'/>
             <h6>Монтаж котельной</h6>
-            <p className="small">Монтаж автономных котельных в загородных домах (дизельные, газовые, электрические, твердотопливные
+            <p className='small'>Монтаж автономных котельных в загородных домах (дизельные, газовые, электрические, твердотопливные
               котлы)</p>
           </div>
-          <div className="col-lg-3 col-md-4 service-box">
-            <img className="rounded"
+          <div className='col-lg-3 col-md-4 service-box'>
+            <img className='rounded'
                  src={ img5 }
-                 alt="Generic placeholder image" width="140" height="140"/>
+                 alt='Generic placeholder image' width='140' height='140'/>
             <h6>Монтаж теплых полов</h6>
-            <p className="small">Монтаж теплых полов</p>
+            <p className='small'>Монтаж теплых полов</p>
           </div>
-          <div className="col-lg-3 col-md-4 service-box">
-            <img className="rounded"
+          <div className='col-lg-3 col-md-4 service-box'>
+            <img className='rounded'
                  src={ img6 }
-                 alt="Generic placeholder image" width="140" height="140"/>
+                 alt='Generic placeholder image' width='140' height='140'/>
             <h6>Монтаж отопления</h6>
-            <p className="small">Монтаж радиаторного отопления</p>
+            <p className='small'>Монтаж радиаторного отопления</p>
           </div>
-          <div className="col-lg-3 col-md-4 service-box">
-            <img className="rounded"
+          <div className='col-lg-3 col-md-4 service-box'>
+            <img className='rounded'
                  src={ img7 }
-                 alt="Generic placeholder image" width="140" height="140"/>
+                 alt='Generic placeholder image' width='140' height='140'/>
             <h6>Водоснабжение и канализация</h6>
-            <p className="small">Все виды работ по водоснабжению и канализации в загородных домах и квартирах</p>
+            <p className='small'>Все виды работ по водоснабжению и канализации в загородных домах и квартирах</p>
           </div>
-          <div className="col-lg-3 col-md-4 service-box">
-            <img className="rounded"
+          <div className='col-lg-3 col-md-4 service-box'>
+            <img className='rounded'
                  src={ img8 }
-                 alt="Generic placeholder image" width="140" height="140"/>
+                 alt='Generic placeholder image' width='140' height='140'/>
             <h6>Доставка</h6>
-            <p className="small">Мы располагаем собственным транспортом, осуществляем доставку материала до заказчика</p>
+            <p className='small'>Мы располагаем собственным транспортом, осуществляем доставку материала до заказчика</p>
           </div>
         </div>
       </div>
@@ -96,8 +96,10 @@ export const HomeView = () => (
     {/* ------ PORTFOLIO ------ */}
     <Portfolio />
 
+    {/* ------ ABOUT ------ */}
     <About />
 
+    {/* ------ FOOTER ------ */}
     <Footer />
 
   </div>
