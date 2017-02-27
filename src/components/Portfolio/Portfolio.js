@@ -57,18 +57,18 @@ class Portfolio extends Component {
 
   render() {
     return (
-      <section id="portfolio" name="portfolio" className="portfolio no-pb">
-        <div className="container mb20">
-          <div className="row">
-            <div className="col-lg-12 text-center">
-              <h2 className="section-heading">Наши работы</h2>
-              <hr className="primary"/>
+      <section id='portfolio' name='portfolio' className='portfolio no-pb'>
+        <div className='container mb20'>
+          <div className='row'>
+            <div className='col-lg-12 text-center'>
+              <h2 className='section-heading'>Наши работы</h2>
+              <hr className='primary'/>
             </div>
           </div>
         </div>
 
-        <div className="container-fluid">
-          <div className="row no-gutter popup-gallery">
+        <div className='container-fluid'>
+          <div className='row no-gutter popup-gallery'>
             {
               portfolio.map((item, i) => {
                 return <PortfolioItems item={item} key={i}/>

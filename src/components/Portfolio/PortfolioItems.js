@@ -29,18 +29,18 @@ class PortfolioItems extends Component {
 
   render() {
     return (
-      <div className="col-lg-4 col-sm-6">
-        <div className="portfolio__box">
+      <div className='col-lg-4 col-sm-6'>
+        <div className='portfolio__box'>
 
           { /* ITEM */ }
           <section onClick={ this.openSlider.bind(this) }>
-            <img src={ this.item.img_mini } className="img-responsive" alt=""/>
-            <div className="portfolio__box--caption">
-              <div className="portfolio__box--caption-content">
-                <div className="portfolio__project-category">
+            <img src={ this.item.img_mini } className='img-responsive' alt=''/>
+            <div className='portfolio__box--caption'>
+              <div className='portfolio__box--caption-content'>
+                <div className='portfolio__project-category'>
                   { this.item.category }
                 </div>
-                <div className="portfolio__project-name">
+                <div className='portfolio__project-name'>
                   { this.item.project_name }
                 </div>
               </div>

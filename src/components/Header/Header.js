@@ -51,22 +51,22 @@ class Header extends Component {
 
   render() {
     return(
-      <div id="header" name="header" className="site-wrapper">
-        <div className="site-wrapper-inner">
-          <div className="cover-container">
-            <nav id="navigation" className={"navbar navbar-toggleable-md navbar-inverse fixed-top " + (this.state.showFixMenu ? "" : "") }>
-              <div className="container">
-                <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                  <span className="navbar-toggler-icon"></span>
+      <div id='header' name='header' className='site-wrapper'>
+        <div className='site-wrapper-inner'>
+          <div className='cover-container'>
+            <nav id='navigation' className={'navbar navbar-toggleable-md navbar-inverse fixed-top ' + (this.state.showFixMenu ? '' : '') }>
+              <div className='container'>
+                <button className='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation'>
+                  <span className='navbar-toggler-icon'></span>
                 </button>
-                <a className="navbar-brand" href="#"><h3>лого</h3></a>
-                <div className="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-                  <ul className="navbar-nav">
+                <a className='navbar-brand' href='#'><h3>лого</h3></a>
+                <div className='collapse navbar-collapse justify-content-end' id='navbarCollapse'>
+                  <ul className='navbar-nav'>
                     {
                       menuItems.map((item, i) => {
                         return (
-                          <li className={"nav-item" + (item.active ? "active" : "")} key={i}>
-                            <Link className="nav-link" to={ item.link } spy={true} smooth={true} offset={0} duration={1000}>
+                          <li className={'nav-item' + (item.active ? 'active' : '')} key={i}>
+                            <Link className='nav-link' to={ item.link } spy={true} smooth={true} offset={0} duration={1000}>
                               { item.title }
                             </Link>
                           </li>
@@ -78,22 +78,22 @@ class Header extends Component {
               </div>
             </nav>
 
-            <div className="inner cover">
-              <h1 className="cover-heading display-4">Сантехника для загородного дома</h1>
-              <p className="lead">
+            <div className='inner cover'>
+              <h1 className='cover-heading display-4'>Сантехника для загородного дома</h1>
+              <p className='lead'>
                 Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев
               </p>
-              <p className="lead">
-                <Link className="btn btn-lg btn-outline-secondary" activeClass="active" to="calculator" spy={true} smooth={true} offset={50} duration={1000}>
-                  <i className="fa fa-calculator fa-fw"></i>Рассчитать цену
+              <p className='lead'>
+                <Link className='btn btn-lg btn-outline-secondary' activeClass='active' to='calculator' spy={true} smooth={true} offset={50} duration={1000}>
+                  <i className='fa fa-calculator fa-fw'></i>Рассчитать цену
                 </Link>
               </p>
             </div>
 
-            <div className="mastfoot">
-              <div className="inner">
-                <Link activeClass="active" to="calculator" spy={true} smooth={true} offset={50} duration={1000}>
-                  <span className="arrow bounce"></span>
+            <div className='mastfoot'>
+              <div className='inner'>
+                <Link activeClass='active' to='calculator' spy={true} smooth={true} offset={50} duration={1000}>
+                  <span className='arrow bounce'></span>
                 </Link>
               </div>
             </div>
