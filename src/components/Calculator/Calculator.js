@@ -15,7 +15,7 @@ const calculatorConf = [
       { title: 'Твердотопливный', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
       { title: 'Бойлер косвенного нагрева до 200л', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
       { title: 'Бойлер косвенного нагрева более 200л', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
-      { title: 'Энергоаккумулятор до 500л', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
+      { title: 'Энергоаккумулятор до 500л', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' }
     ]
   },
   {
@@ -23,7 +23,7 @@ const calculatorConf = [
     title: 'Test',
     products: [
       { title: 'Газовый одноконтурный', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
-      { title: 'Газовый двухконтурный', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
+      { title: 'Газовый двухконтурный', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' }
     ]
   }
 ]
@@ -58,7 +58,7 @@ class Calculator extends Component {
                       <form>
                         <label className='custom-control custom-radio'>
                           <input id='radio1' name='radio' type='radio' className='custom-control-input' />
-                          <span className='custom-control-indicator'></span>
+                          <span className='custom-control-indicator' />
                           <span className='custom-control-description'>Toggle this custom radio</span>
                         </label>
                       </form>
