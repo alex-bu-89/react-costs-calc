@@ -83,7 +83,7 @@ class Calculator extends Component {
 const mapStateToProps = (state) => { return { state: state } }
 
 const mapDispatchToProps = {
-  test : () => test('test'),
+  test : () => test('test')
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Calculator)
