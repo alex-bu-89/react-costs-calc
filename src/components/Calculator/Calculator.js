@@ -1,32 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { test } from '../../store/calculator'
+import Category from './Category'
+import products from './../../../config/products'
 import './Calculator.sass'
-
-const calculatorConf = [
-  {
-    category: 'boiler',
-    title: 'Выбор котла',
-    products: [
-      { title: 'Газовый одноконтурный', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
-      { title: 'Газовый двухконтурный', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
-      { title: 'Электрический', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
-      { title: 'Дизельный', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
-      { title: 'Твердотопливный', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
-      { title: 'Бойлер косвенного нагрева до 200л', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
-      { title: 'Бойлер косвенного нагрева более 200л', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
-      { title: 'Энергоаккумулятор до 500л', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' }
-    ]
-  },
-  {
-    category: 'test',
-    title: 'Test',
-    products: [
-      { title: 'Газовый одноконтурный', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' },
-      { title: 'Газовый двухконтурный', price: 1000, service_price: 100, type: { form: 'checkbox' }, desc: '', img_src: '#' }
-    ]
-  }
-]
 
 class Calculator extends Component {
 
@@ -40,31 +17,25 @@ class Calculator extends Component {
               <hr className='primary' />
 
               <ul className='nav nav-tabs' role='tablist'>
-                <li className='nav-item'>
-                  <a className='nav-link active' data-toggle='tab' href='#home' role='tab'>Выбор котла</a>
-                </li>
-                <li className='nav-item'>
-                  <a className='nav-link' data-toggle='tab' href='#profile' role='tab'>Выбор домохода</a>
-                </li>
-                <li className='nav-item'>
-                  <a className='nav-link' data-toggle='tab' href='#messages' role='tab'>Тест</a>
-                </li>
+                {
+                  products.map((category, i) => {
+                    return (
+                      <li className='nav-item' key={i}>
+                        <a className={ 'nav-link ' + (i == 0 ? 'active' : '')} data-toggle='tab' href={ '#' + category.name } role='tab'>{ category.title }</a>
+                      </li>
+                    )
+                  })
+                }
               </ul>
 
               <div className='row text-justify'>
                 <div className='col-7'>
                   <div className='tab-content'>
-                    <div className='tab-pane active' id='home' role='tabpanel'>
-                      <form>
-                        <label className='custom-control custom-radio'>
-                          <input id='radio1' name='radio' type='radio' className='custom-control-input' />
-                          <span className='custom-control-indicator' />
-                          <span className='custom-control-description'>Toggle this custom radio</span>
-                        </label>
-                      </form>
-                    </div>
-                    <div className='tab-pane' id='profile' role='tabpanel'>2</div>
-                    <div className='tab-pane' id='messages' role='tabpanel'>3</div>
+                    {
+                      products.map((category, i) => {
+                        return <Category category={ category } index={ i } key={ i }/>
+                      })
+                    }
                   </div>
                 </div>
                 <div className='col-5'>
