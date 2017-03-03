@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { test } from '../../store/calculator'
 import StepZilla from './Wizard'
-import Category from './Category'
-import Boiler from './steps/Boiler'
-import Test from './steps/Test'
+import Step1 from './steps/Step1'
 import products from './../../../config/products'
 import './Calculator.sass'
 
@@ -12,9 +10,18 @@ class Calculator extends Component {
 
   render () {
 
-    const steps = products.map((category, i) => {
-                    return { name: category.title, component: <Category category={ category } index={ i } key={ i } /> }
-                  })
+    const data = {
+      step1: products.filter((category) => { if (category.id === 'boiler') { return category } })
+    }
+
+    const steps = [
+      { name: 'Кательная', component: <Step1 data={ data.step1 } /> }
+    ]
+
+
+    // products.map((category, i) => {
+    //                 return { name: category.title, component: <Category category={ category } index={ i } key={ i } /> }
+    //               })
 
     return (
       <section id='calculator' name='calculator'>
