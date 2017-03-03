@@ -13,7 +13,7 @@ class Category extends Component {
   render() {
     return (
       <div className={ 'tab-pane ' + (this.index == 0 ? 'active' : '')} id={ this.category.name } role='tabpanel'>
-        <form className='container'>
+        <form className='d-flex flex-wrap'>
           {
             this.category.items.map((product, i) => {
               return <Product product={ product } key={ i }/>

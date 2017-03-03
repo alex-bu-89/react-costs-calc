@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { test } from '../../store/calculator'
+import StepZilla from './Wizard'
 import Category from './Category'
+import Boiler from './steps/Boiler'
+import Test from './steps/Test'
 import products from './../../../config/products'
 import './Calculator.sass'
 
 class Calculator extends Component {
 
   render () {
+
+    const steps = products.map((category, i) => {
+                    return { name: category.title, component: <Category category={ category } index={ i } key={ i } /> }
+                  })
+
     return (
       <section id='calculator' name='calculator'>
         <div className='container'>
@@ -16,31 +24,11 @@ class Calculator extends Component {
               <h2 className='section-heading'>Расчет цены</h2>
               <hr className='primary' />
 
-              <ul className='nav nav-tabs' role='tablist'>
-                {
-                  products.map((category, i) => {
-                    return (
-                      <li className='nav-item' key={i}>
-                        <a className={ 'nav-link ' + (i == 0 ? 'active' : '')} data-toggle='tab' href={ '#' + category.name } role='tab'>{ category.title }</a>
-                      </li>
-                    )
-                  })
-                }
-              </ul>
-
-              <div className='row text-justify'>
-                <div className='col-7'>
-                  <div className='tab-content'>
-                    {
-                      products.map((category, i) => {
-                        return <Category category={ category } index={ i } key={ i }/>
-                      })
-                    }
-                  </div>
+              <div className='wizard step-progress row'>
+                <div className='col-8'>
+                  <StepZilla steps={ steps } />
                 </div>
-                <div className='col-5'>
-                  Итого
-                </div>
+                <div className='col-4'>test</div>
               </div>
 
             </div>
