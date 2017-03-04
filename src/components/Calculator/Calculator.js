@@ -1,28 +1,28 @@
+// React
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { test } from '../../store/calculator'
+
+// CSS
+import './Calculator.sass'
+
+// Component
+import products from './../../../config/products'
+import { getProductsByCategories } from './Utils'
 import StepZilla from './Wizard'
 import Step1 from './steps/Step1'
-import products from './../../../config/products'
-import './Calculator.sass'
 
 class Calculator extends Component {
 
   render () {
-
     const data = {
-      step1: products.filter((category) => { if (category.id === 'boiler') { return category } })
+      step1: getProductsByCategories(['boiler', 'boiler-piping'], products)
     }
 
     const steps = [
-      { name: 'Кательная', component: <Step1 data={ data.step1 } /> }
+      { name: '1', component: <Step1 data={ data.step1 } /> }
     ]
-
-
-    // products.map((category, i) => {
-    //                 return { name: category.title, component: <Category category={ category } index={ i } key={ i } /> }
-    //               })
-
+    
     return (
       <section id='calculator' name='calculator'>
         <div className='container'>
@@ -31,7 +31,7 @@ class Calculator extends Component {
               <h2 className='section-heading'>Расчет цены</h2>
               <hr className='primary' />
 
-              <div className='wizard step-progress row'>
+              <div className='wizard step-progress row text-left'>
                 <div className='col-8'>
                   <StepZilla steps={ steps } />
                 </div>

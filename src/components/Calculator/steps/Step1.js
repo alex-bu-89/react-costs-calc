@@ -11,24 +11,26 @@ class Step1 extends Component {
 
   render() {
     return (
-      <form>
-        {
-          this.data.map((category, i) => {
-            return (
-              <fieldset key={ i }>
-                <h6>{ category.title }</h6>
+      <div className='container'>
+        <form className='row'>
+          {
+            this.data.map((category, i) => {
+              return (
+                <div className='col-6' key={ i }>
+                  <h6>{ category.title }</h6>
 
-                {
-                  category.items.map((product, y) => {
-                    return <Product product={ product } key={ y } />
-                  })
-                }
+                  {
+                    category.products.map((product, y) => {
+                      return <Product product={ product } key={ y } />
+                    })
+                  }
 
-              </fieldset>
-            )
-          })
-        }
-      </form>
+                </div>
+              )
+            })
+          }
+        </form>
+      </div>
     )
   }
 }

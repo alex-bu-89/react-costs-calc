@@ -21,7 +21,7 @@ class Product extends Component {
       case FORM_RADIO:
         return (
           <div className='form-group row'>
-            <label className='custom-control custom-radio col'>
+            <label className='custom-control custom-radio'>
               <input id='radio1' name='radio' type='radio' className='custom-control-input' onChange={ this.handleClick.bind(this) } />
               <span className='custom-control-indicator' />
               <span className='custom-control-description' onChange={ this.handleClick.bind(this) }> { this.product.title } </span>
@@ -30,11 +30,13 @@ class Product extends Component {
         )
       case FORM_CHECKBOX:
         return (
-          <label className="custom-control custom-checkbox">
-            <input type="checkbox" className="custom-control-input" />
-            <span className="custom-control-indicator"></span>
-            <span className="custom-control-description">{ this.product.title }</span>
-          </label>
+          <div>
+            <label className="custom-control custom-checkbox">
+              <input type="checkbox" className="custom-control-input" />
+              <span className="custom-control-indicator"></span>
+              <span className="custom-control-description">{ this.product.title }</span>
+            </label>
+          </div>
         )
       case FORM_NUMBER:
         return (
