@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { test } from '../../store/calculator'
 
 const FORM_CHECKBOX = 'checkbox',
       FORM_RADIO = 'radio',
@@ -17,26 +19,22 @@ class Product extends Component {
   }
 
   render() {
-    switch (this.product.type) {
+    switch (this.product.form.type) {
       case FORM_RADIO:
         return (
-          <div className='form-group row'>
-            <label className='custom-control custom-radio'>
-              <input id='radio1' name='radio' type='radio' className='custom-control-input' onChange={ this.handleClick.bind(this) } />
-              <span className='custom-control-indicator' />
-              <span className='custom-control-description' onChange={ this.handleClick.bind(this) }> { this.product.title } </span>
-            </label>
-          </div>
+          <label className='custom-control custom-radio'>
+            <input id={ 'radio' + this.product.sku } name={ this.product.form.name } type='radio' className='custom-control-input' onChange={ this.handleClick.bind(this) } />
+            <span className='custom-control-indicator' />
+            <span className='custom-control-description' onChange={ this.handleClick.bind(this) }>{ this.product.title }</span>
+          </label>
         )
       case FORM_CHECKBOX:
         return (
-          <div>
-            <label className="custom-control custom-checkbox">
-              <input type="checkbox" className="custom-control-input" />
-              <span className="custom-control-indicator"></span>
-              <span className="custom-control-description">{ this.product.title }</span>
-            </label>
-          </div>
+          <label className="custom-control custom-checkbox">
+            <input type="checkbox" className="custom-control-input" />
+            <span className="custom-control-indicator"></span>
+            <span className="custom-control-description">{ this.product.title }</span>
+          </label>
         )
       case FORM_NUMBER:
         return (
@@ -59,4 +57,10 @@ Product.propTypes = {
   product: React.PropTypes.object.isRequired
 }
 
-export default Product
+const mapStateToProps = (state) => { return { state: state } }
+
+const mapDispatchToProps = {
+  test: () => test('test')
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product)

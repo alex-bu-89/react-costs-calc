@@ -6,28 +6,35 @@ class Category extends Component {
   constructor(props) {
     super(props)
 
-    this.category = props.category
-    this.index = props.index
+    this.data = props.data
   }
 
   render() {
     return (
-      <div className={ 'tab-pane ' + (this.index == 0 ? 'active' : '')} id={ this.category.name } role='tabpanel'>
-        <form className='d-flex flex-column'>
-          {
-            this.category.items.map((product, i) => {
-              return <Product product={ product } key={ i }/>
-            })
-          }
-        </form>
-      </div>
+      <form className='d-flex align-items-stretch'>
+        {
+          this.data.map((category, i) => {
+            return (
+              <fieldset key={ i }>
+                <h6>{ category.title }</h6>
+
+                {
+                  category.products.map((product, y) => {
+                    return <Product product={ product } key={ y } />
+                  })
+                }
+
+              </fieldset>
+            )
+          })
+        }
+      </form>
     )
   }
 }
 
 Category.propTypes = {
-  category: React.PropTypes.object.isRequired,
-  index: React.PropTypes.number.isRequired
+  data: React.PropTypes.array.isRequired
 }
 
 export default Category

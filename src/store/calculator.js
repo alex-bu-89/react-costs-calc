@@ -2,6 +2,7 @@
 // Constants
 // ------------------------------------
 export const TEST = 'TEST'
+export const ADD_PRODUCT = 'ADD_PRODUCT'
 
 // ------------------------------------
 // Actions
@@ -13,6 +14,13 @@ export function test (value) {
   }
 }
 
+export function addProduct (product) {
+  return {
+    type    : ADD_PRODUCT,
+    payload : product
+  }
+}
+
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
@@ -21,6 +29,13 @@ const ACTION_HANDLERS = {
     return {
       test: action.payload
     }
+  },
+
+  [ADD_PRODUCT] : (state, action) => {
+    return {
+      ...state,
+      products: [...state.products, action.payload]
+    }
   }
 }
 
@@ -28,7 +43,11 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 const initialState = {
-  test: null
+  products: [],
+  price: 0,
+  service_price: 0,
+  total_price: 0,
+  isEmpty: true
 }
 
 export default function calcReducer (state = initialState, action) {

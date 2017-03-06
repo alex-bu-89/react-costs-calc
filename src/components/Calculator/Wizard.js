@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Promise from 'promise';
-import './Wizard.sass'
 
 export default class StepZilla extends Component {
   constructor(props) {

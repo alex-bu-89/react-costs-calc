@@ -1,0 +1,83 @@
+.wizard
+  .multi-step,
+  fieldset
+    width: 100%
+
+  fieldset
+    label
+      display: block
+
+  ol.progtrckr
+    list-style-type: none
+    padding: 0
+    text-align: left
+
+    li
+      display: inline-block
+      cursor: pointer
+      color: $primary-color
+      background-color: $light-grey
+      padding: 9px 15px 10px 15px
+      // padding: 9px 15px 10px 40px
+      position: relative
+
+      // &:before
+      //   width: 0px
+      //   height: 0px
+      //   border-top: 20px inset transparent
+      //   border-bottom: 20px inset transparent
+      //   border-left: 20px solid #ffffff
+      //   position: absolute
+      //   content: ""
+      //   top: 0
+      //   left: 0
+      //
+      // &:after
+      //   width: 0px
+      //   height: 0px
+      //   border-top: 20px inset transparent
+      //   border-bottom: 20px inset transparent
+      //   border-left: 20px solid $light-grey
+      //   position: absolute
+      //   content: ""
+      //   top: 0
+      //   right: -20px
+      //   z-index: 2
+      //
+      // &:first-child
+      //   border-top-left-radius: 4px
+      //   border-bottom-left-radius: 4px
+      //   padding-left: 15px
+      //
+      //   &:before
+      //     display: none
+      //
+      // &:last-child
+      //   border-top-right-radius: 4px
+      //   border-bottom-right-radius: 4px
+      //
+      //   &:after
+      //     display: none
+
+    li
+      &.progtrckr-doing,
+      &.progtrckr-done
+        color: #fff
+        background-color: $primary-color
+
+      &.progtrckr-doing
+        background-color: $primary-color-light
+
+      &.progtrckr-todo
+        &:hover
+          color: #fff
+          background-color: $primary-color-light
+
+      // &:after
+      //   border-left: 20px solid $primary-color
+
+    em
+      display: inline-block
+      font-weight: normal
+      font-style: normal
+      padding: 0 10px 0 5px

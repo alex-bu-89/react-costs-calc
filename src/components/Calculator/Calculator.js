@@ -1,7 +1,6 @@
 // React
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { test } from '../../store/calculator'
 
 // CSS
 import './Calculator.sass'
@@ -10,19 +9,27 @@ import './Calculator.sass'
 import products from './../../../config/products'
 import { getProductsByCategories } from './Utils'
 import StepZilla from './Wizard'
-import Step1 from './steps/Step1'
+import Category from './Category'
 
 class Calculator extends Component {
 
   render () {
-    const data = {
-      step1: getProductsByCategories(['boiler', 'boiler-piping'], products)
-    }
 
-    const steps = [
-      { name: '1', component: <Step1 data={ data.step1 } /> }
+    // wizzard data
+    const stepsData = [
+      { name: 'Кательная', data: getProductsByCategories(['boiler', 'boiler-piping'], products) },
+      { name: 'Дымоход', data: getProductsByCategories(['boiler'], products) },
+      { name: 'Отопление', data: getProductsByCategories(['boiler-piping'], products) },
+      { name: 'Канализация', data: getProductsByCategories(['boiler'], products) },
+      { name: 'Водоснабжение', data: getProductsByCategories(['boiler-piping'], products) },
+      { name: 'Наружные работы', data: getProductsByCategories(['boiler'], products) },
     ]
-    
+
+    // building steps for wizzard
+    const steps = stepsData.map((stepData, i) => {
+      return { name: stepData.name, component: <Category data={ stepData.data } key={i} /> }
+    })
+
     return (
       <section id='calculator' name='calculator'>
         <div className='container'>
@@ -32,10 +39,7 @@ class Calculator extends Component {
               <hr className='primary' />
 
               <div className='wizard step-progress row text-left'>
-                <div className='col-8'>
-                  <StepZilla steps={ steps } />
-                </div>
-                <div className='col-4'>test</div>
+                <StepZilla steps={ steps } />
               </div>
 
             </div>
@@ -48,8 +52,4 @@ class Calculator extends Component {
 
 const mapStateToProps = (state) => { return { state: state } }
 
-const mapDispatchToProps = {
-  test : () => test('test')
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Calculator)
+export default connect(mapStateToProps)(Calculator)
