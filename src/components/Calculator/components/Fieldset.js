@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addProduct } from '../../../store/calculator'
 import Product from './Product'
 
 class Fieldset extends Component {
@@ -9,11 +8,6 @@ class Fieldset extends Component {
     super(props)
 
     this.data = props.data
-    this._addProduct = props.addProduct
-  }
-
-  handleRadioClick(product, e){
-    this._addProduct(product)
   }
 
   render() {
@@ -29,7 +23,6 @@ class Fieldset extends Component {
                   category.products.map((product, y) => {
                     return <Product
                               product={ product }
-                              handleRadioClick={ this.handleRadioClick.bind(this) }
                               key={ y } />
                   })
                 }
@@ -49,8 +42,4 @@ Fieldset.propTypes = {
 
 const mapStateToProps = (state) => { return { state: state } }
 
-const mapDispatchToProps = {
-  addProduct
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Fieldset)
+export default connect(mapStateToProps)(Fieldset)

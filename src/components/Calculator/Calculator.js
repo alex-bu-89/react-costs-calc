@@ -13,17 +13,29 @@ import Fieldset from './components/Fieldset'
 
 class Calculator extends Component {
 
+  constructor(props) {
+    super(props)
+
+    this.p = []
+  }
+
+  componentWillUpdate(nextProps) {
+    console.log(nextProps);
+    this.p = nextProps.state.calculator.products
+  }
+
   render () {
 
     // wizzard data
     const tabs = [
       { id: 'boiler', name: 'Кательная', data: getProductsByCategories(['boiler', 'boiler-piping'], products) },
-      { id: 'chimney', name: 'Дымоход', data: getProductsByCategories(['boiler'], products) },
+      { id: 'chimney', name: 'Дымоход', data: getProductsByCategories(['chimney'], products) },
       { id: 'heating', name: 'Отопление', data: getProductsByCategories(['boiler-piping'], products) },
       { id: 'canalisation', name: 'Канализация', data: getProductsByCategories(['boiler'], products) },
       { id: 'water-supply', name: 'Водоснабжение', data: getProductsByCategories(['boiler-piping'], products) },
       { id: 'external-work', name: 'Наружные работы', data: getProductsByCategories(['boiler'], products) },
     ]
+
 
     return (
       <section id='calculator' name='calculator'>
@@ -51,6 +63,26 @@ class Calculator extends Component {
             })
           }
         </div>
+        <table className='table'>
+          <tbody>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Price</th>
+            </tr>
+            {
+              this.p.map((product, i) => {
+                return (
+                  <tr key={i}>
+                    <td>{ product.sku }</td>
+                    <td>{ product.title }</td>
+                    <td>{ product.price }</td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
+        </table>
       </section>
     )
   }

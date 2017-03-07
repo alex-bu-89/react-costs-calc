@@ -24,21 +24,28 @@ function _removeProduct (product, index) {
   }
 }
 
-export function addProduct(product) {
+export function addProduct(product, checked = false) {
   return (dispatch, getState) => {
+
     const products = getState().calculator.products
 
-    // check radio names
-    if (product.form.name !== undefined) {
+    // remove prev. product if radio button
+    if (product.form.type === 'radio') {
       const match = _.find(products, (p) => {
         return p.form.name === product.form.name
       })
-
       const index = _.indexOf(products, match)
 
       if (typeof match !== 'undefined' && index !== -1) {
         dispatch(_removeProduct(match, index))
       }
+    }
+
+    // remove product while unchecking
+    if (product.form.type === 'checkbox' && checked === true) {
+      const index = _.indexOf(products, product)
+      dispatch(_removeProduct(product, index))
+      return
     }
 
     dispatch(_addProduct(product))

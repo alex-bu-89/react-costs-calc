@@ -15,5 +15,10 @@ const products = [
   { sku:'12', title: 'Объвязка с насосными модулями', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: 1000, service_price: 100, form: { type: 'checkbox' }, description: '', img_src: '#' },
   { sku:'13', title: 'Погодозависимая автоматика', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: 1000, service_price: 100, form: { type: 'checkbox' }, description: '', img_src: '#' },
   { sku:'14', title: 'Автоматика регулировки температуры в помещениях', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: 1000, service_price: 100, form: { type: 'checkbox' }, description: '', img_src: '#' },
+  // BOILER PIPING
+  { sku:'15', title: 'Коаксиальный', category: { id: 'chimney', title: 'Выбор дымохода' }, price: 1000, service_price: 100, form: { type: 'checkbox' }, description: '', img_src: '#' },
+  { sku:'16', title: 'Сендвич (нержавейка)', category: { id: 'chimney', title: 'Выбор дымохода' }, price: 1000, service_price: 100, form: { type: 'number', label: 'м2' }, description: '', img_src: '#' },
+  { sku:'17', title: 'Проход перекрытий или стен газобетон-дерево', category: { id: 'chimney', title: 'Выбор дымохода' }, price: 1000, service_price: 100, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
+  { sku:'18', title: 'Проход перекрытий или стен кирпич-бетон', category: { id: 'chimney', title: 'Выбор дымохода' }, price: 1000, service_price: 100, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
 ]
 export default products
