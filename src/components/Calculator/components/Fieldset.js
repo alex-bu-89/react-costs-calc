@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
 import Product from './Product'
 
-class Category extends Component {
+class Fieldset extends Component {
 
   constructor(props) {
     super(props)
 
     this.data = props.data
+    this.lastClickedElement = null
+  }
+
+  handleRadioClick(product, e){
+    console.log(product);
+    console.log(e.target);
   }
 
   render() {
@@ -20,7 +26,10 @@ class Category extends Component {
 
                 {
                   category.products.map((product, y) => {
-                    return <Product product={ product } key={ y } />
+                    return <Product
+                              product={ product }
+                              handleRadioClick={ this.handleRadioClick }
+                              key={ y } />
                   })
                 }
 
@@ -33,8 +42,8 @@ class Category extends Component {
   }
 }
 
-Category.propTypes = {
+Fieldset.propTypes = {
   data: React.PropTypes.array.isRequired
 }
 
-export default Category
+export default Fieldset

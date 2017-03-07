@@ -14,10 +14,12 @@ export function test (value) {
   }
 }
 
-export function addProduct (product) {
-  return {
-    type    : ADD_PRODUCT,
-    payload : product
+export function addProduct(product) {
+  return (dispatch, getState) => {
+    dispatch({
+      type    : ADD_PRODUCT,
+      payload : product
+    })
   }
 }
 
@@ -25,13 +27,13 @@ export function addProduct (product) {
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [TEST] : (state, action) => {
+  [TEST]: (state, action) => {
     return {
       test: action.payload
     }
   },
 
-  [ADD_PRODUCT] : (state, action) => {
+  [ADD_PRODUCT]: (state, action) => {
     return {
       ...state,
       products: [...state.products, action.payload]

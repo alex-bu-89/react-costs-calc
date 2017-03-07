@@ -7,43 +7,49 @@ import './Calculator.sass'
 
 // Component
 import products from './../../../config/products'
-import { getProductsByCategories } from './Utils'
-import StepZilla from './Wizard'
-import Category from './Category'
+import { getProductsByCategories } from './utils'
+import StepZilla from './components/Wizard'
+import Fieldset from './components/Fieldset'
 
 class Calculator extends Component {
 
   render () {
 
     // wizzard data
-    const stepsData = [
-      { name: 'Кательная', data: getProductsByCategories(['boiler', 'boiler-piping'], products) },
-      { name: 'Дымоход', data: getProductsByCategories(['boiler'], products) },
-      { name: 'Отопление', data: getProductsByCategories(['boiler-piping'], products) },
-      { name: 'Канализация', data: getProductsByCategories(['boiler'], products) },
-      { name: 'Водоснабжение', data: getProductsByCategories(['boiler-piping'], products) },
-      { name: 'Наружные работы', data: getProductsByCategories(['boiler'], products) },
+    const tabs = [
+      { id: 'boiler', name: 'Кательная', data: getProductsByCategories(['boiler', 'boiler-piping'], products) },
+      { id: 'chimney', name: 'Дымоход', data: getProductsByCategories(['boiler'], products) },
+      { id: 'heating', name: 'Отопление', data: getProductsByCategories(['boiler-piping'], products) },
+      { id: 'canalisation', name: 'Канализация', data: getProductsByCategories(['boiler'], products) },
+      { id: 'water-supply', name: 'Водоснабжение', data: getProductsByCategories(['boiler-piping'], products) },
+      { id: 'external-work', name: 'Наружные работы', data: getProductsByCategories(['boiler'], products) },
     ]
-
-    // building steps for wizzard
-    const steps = stepsData.map((stepData, i) => {
-      return { name: stepData.name, component: <Category data={ stepData.data } key={i} /> }
-    })
 
     return (
       <section id='calculator' name='calculator'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-lg-12 text-center'>
-              <h2 className='section-heading'>Расчет цены</h2>
-              <hr className='primary' />
+        <ul className='nav nav-tabs' role='tablist'>
+          {
+            tabs.map((tab, i) => {
+              return(
+                <li className='nav-item' key={ i }>
+                  <a className={ 'nav-link ' + ((i === 0)? 'active' : '') } data-toggle='tab' href={ '#' + tab.id } role='tab'>{ tab.name }</a>
+                </li>
+              )
+            })
+          }
+        </ul>
 
-              <div className='wizard step-progress row text-left'>
-                <StepZilla steps={ steps } />
-              </div>
-
-            </div>
-          </div>
+        <div className='tab-content'>
+          {
+            tabs.map((tab, i) => {
+              return (
+                <div className={ 'tab-pane ' + ((i === 0)? 'active' : '') } id={ tab.id } role='tabpanel' key={ i } >
+                  <Fieldset
+                    data={ tab.data } />
+                </div>
+              )
+            })
+          }
         </div>
       </section>
     )

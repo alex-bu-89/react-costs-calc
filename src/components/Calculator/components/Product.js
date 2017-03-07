@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { test } from '../../store/calculator'
+import { test } from '../../../store/calculator'
 
 const FORM_CHECKBOX = 'checkbox',
       FORM_RADIO = 'radio',
@@ -12,20 +12,21 @@ class Product extends Component {
     super(props)
 
     this.product = props.product
+    this._handleRadioClick = props.handleRadioClick
   }
 
-  handleClick(e) {
-    console.log(this.product);
+  handleRadioClick(e) {
+    this._handleRadioClick(this.product, e)
   }
 
   render() {
     switch (this.product.form.type) {
       case FORM_RADIO:
         return (
-          <label className='custom-control custom-radio'>
-            <input id={ 'radio' + this.product.sku } name={ this.product.form.name } type='radio' className='custom-control-input' onChange={ this.handleClick.bind(this) } />
+          <label className='custom-control custom-radio' onChange={ this.handleRadioClick.bind(this) }>
+            <input id={ 'radio' + this.product.sku } name={ this.product.form.name } type='radio' className='custom-control-input' />
             <span className='custom-control-indicator' />
-            <span className='custom-control-description' onChange={ this.handleClick.bind(this) }>{ this.product.title }</span>
+            <span className='custom-control-description'>{ this.product.title }</span>
           </label>
         )
       case FORM_CHECKBOX:
