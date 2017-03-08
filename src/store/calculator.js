@@ -28,6 +28,7 @@ export function addProduct(product, checked = false) {
   return (dispatch, getState) => {
 
     const products = getState().calculator.products
+    const index = _.indexOf(products, product)
 
     // remove prev. product if radio button
     if (product.form.type === 'radio') {
@@ -43,9 +44,22 @@ export function addProduct(product, checked = false) {
 
     // remove product while unchecking
     if (product.form.type === 'checkbox' && checked === true) {
-      const index = _.indexOf(products, product)
       dispatch(_removeProduct(product, index))
       return
+    }
+
+    // update product if value changed
+    if (product.form.type === 'number') {
+
+      if (product.form.value === '') {
+        if (index > -1) {
+          dispatch(_removeProduct(product, index))
+          return
+        }        
+        return
+      }
+
+      if (index > -1) { return }
     }
 
     dispatch(_addProduct(product))

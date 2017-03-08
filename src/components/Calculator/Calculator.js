@@ -20,7 +20,6 @@ class Calculator extends Component {
   }
 
   componentWillUpdate(nextProps) {
-    console.log(nextProps);
     this.p = nextProps.state.calculator.products
   }
 
