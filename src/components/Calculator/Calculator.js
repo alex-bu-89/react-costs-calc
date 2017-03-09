@@ -29,10 +29,10 @@ class Calculator extends Component {
     const tabs = [
       { id: 'boiler', name: 'Кательная', data: getProductsByCategories(['boiler', 'boiler-piping'], products) },
       { id: 'chimney', name: 'Дымоход', data: getProductsByCategories(['chimney'], products) },
-      { id: 'heating', name: 'Отопление', data: getProductsByCategories(['boiler-piping'], products) },
-      { id: 'canalisation', name: 'Канализация', data: getProductsByCategories(['boiler'], products) },
-      { id: 'water-supply', name: 'Водоснабжение', data: getProductsByCategories(['boiler-piping'], products) },
-      { id: 'external-work', name: 'Наружные работы', data: getProductsByCategories(['boiler'], products) },
+      { id: 'heating', name: 'Отопление', data: getProductsByCategories(['heating'], products) },
+      { id: 'canalisation', name: 'Канализация', data: getProductsByCategories(['canalisation'], products) },
+      { id: 'water-system', name: 'Водоснабжение', data: getProductsByCategories(['water-system', 'water-treatment'], products) },
+      { id: 'external-work', name: 'Наружные работы', data: getProductsByCategories(['external-works'], products) },
     ]
 
 
