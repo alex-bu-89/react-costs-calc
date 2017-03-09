@@ -6,6 +6,7 @@ import _ from 'lodash'
 export const TEST = 'TEST'
 export const ADD_PRODUCT = 'ADD_PRODUCT'
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
+export const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
 
 // ------------------------------------
 // Actions
@@ -20,6 +21,13 @@ function _addProduct (product) {
 function _removeProduct (product, index) {
   return {
     type    : REMOVE_PRODUCT,
+    payload : { product: product, index: index }
+  }
+}
+
+function _updateProduct (product, index) {
+  return {
+    type    : UPDATE_PRODUCT,
     payload : { product: product, index: index }
   }
 }
@@ -51,13 +59,20 @@ export function addProduct(product, checked = false) {
     // update product if value changed
     if (product.form.type === 'number') {
 
-      if (product.form.value === '') {
+      if (product.form.value === '' || product.form.value == '0') {
         if (index > -1) {
           dispatch(_removeProduct(product, index))
-          return
-        }        
+        }
+
+        // do nothing if value is empty
         return
+
+      } else if (product.form.value) {
+        if (index > -1) {
+          dispatch(_updateProduct(product, index))
+        }
       }
+
 
       if (index > -1) { return }
     }
@@ -84,6 +99,16 @@ const ACTION_HANDLERS = {
         ...state.products.slice(0, action.payload.index),
         ...state.products.slice(action.payload.index + 1)
       ]
+    }
+  },
+
+  [UPDATE_PRODUCT]: (state, action) => {
+    let products = state.products.slice()
+    products[action.payload.index] = action.payload.product
+
+    return {
+      ...state,
+      products: products
     }
   }
 }

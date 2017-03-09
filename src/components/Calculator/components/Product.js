@@ -12,7 +12,7 @@ class Product extends Component {
     super(props)
 
     // component state
-    this.state = { checked: false }
+    this.state = { checked: false, value: '' }
 
     this.product = props.product
     this._addProduct = props.addProduct
@@ -23,26 +23,44 @@ class Product extends Component {
     const products = this.props.state.calculator.products
     products.map((product) => {
       if (product.sku === this.product.sku) {
-        this.setState({ checked: true })
+        this.setState({ checked: true, value: product.form.value })
       }
     })
   }
 
   handleRadioClick(e) {
+    this.product.price.total = parseFloat(this.product.price.regular)
+
     this._addProduct(this.product)
     this.setState({ checked: !this.state.checked })
   }
 
   handleCheckboxClick(e) {
+    this.product.price.total = parseFloat(this.product.price.regular)
+
     this._addProduct(this.product, this.state.checked)
     this.setState({ checked: !this.state.checked })
   }
 
   handleInputChange(e) {
-    const value = e.target.value
+    let value = e.target.value
+
+    if (value) {
+      value = parseFloat(value)
+      this.setState({ value: value })
+    }
+
+    // add value
     this.product.form.value = value
+
+    // add price
+    if (value) {
+      this.product.price.total = parseFloat(value) * parseFloat(this.product.price.regular)
+    } else {
+      this.product.price.total = ''
+    }
+
     this._addProduct(this.product, this.state.checked)
-    this.setState({ checked: !this.state.checked })
   }
 
   render() {
@@ -84,7 +102,10 @@ class Product extends Component {
             <input className='col'
                    type='number'
                    id={ this.product.category.id + '-' + this.product.sku }
-                   onBlur={ this.handleInputChange.bind(this) } />
+                   onBlur={ this.handleInputChange.bind(this) }
+                   min='1'
+                   max='10000'
+                   defaultValue={ this.state.value } />
 
             <label className='col col-form-label' htmlFor={ this.product.category.id + '-' + this.product.sku }>
               { this.product.form.label }

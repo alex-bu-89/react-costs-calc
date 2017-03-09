@@ -74,8 +74,8 @@ class Calculator extends Component {
                 return (
                   <tr key={i}>
                     <td>{ product.sku }</td>
-                    <td>{ product.title }</td>
-                    <td>{ product.price }</td>
+                    <td>{ product.title + ((product.form.value) ? ' x ' + product.form.value + ' ' + product.form.label : '') }</td>
+                    <td>{ product.price.total + ' руб.' }</td>
                   </tr>
                 )
               })
