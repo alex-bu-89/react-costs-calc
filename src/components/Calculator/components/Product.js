@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addProduct,  } from '../../../store/calculator'
+import { addProduct, removeProduct, updateProduct } from '../../../store/calculator'
+import _ from 'lodash'
 
 const FORM_CHECKBOX = 'checkbox',
       FORM_RADIO = 'radio',
@@ -11,11 +12,16 @@ class Product extends Component {
   constructor(props) {
     super(props)
 
-    // component state
-    this.state = { checked: false, value: '' }
-
     this.product = props.product
     this._addProduct = props.addProduct
+    this._removeProduct = props.removeProduct
+    this._updateProduct = props.updateProduct
+
+    // crate final price
+    this.product.price.total = parseFloat(this.product.price.regular)
+
+    // component state
+    this.state = { checked: false, value: '' }
   }
 
   componentWillMount() {
@@ -28,39 +34,67 @@ class Product extends Component {
     })
   }
 
+  /**
+   * Handle radio button
+   */
   handleRadioClick(e) {
-    this.product.price.total = parseFloat(this.product.price.regular)
+    const products = this.props.state.calculator.products
+    const index = _.indexOf(products, _.find(products, (product) => { return product.form.name === this.product.form.name }))
 
+    // remove previous product
+    if (index > -1) {
+      this._removeProduct(index)
+    }
+
+    // add next product
     this._addProduct(this.product)
     this.setState({ checked: !this.state.checked })
   }
 
+  /**
+   * Handle checkbox
+   */
   handleCheckboxClick(e) {
-    this.product.price.total = parseFloat(this.product.price.regular)
+    const products = this.props.state.calculator.products
+    const index = _.indexOf(products, _.find(products, (product) => { return product.sku === this.product.sku }))
 
-    this._addProduct(this.product, this.state.checked)
+    if (this.state.checked) {
+      this._removeProduct(index)
+      this.setState({ checked: !this.state.checked })
+      return
+    }
+
+    this._addProduct(this.product)
     this.setState({ checked: !this.state.checked })
   }
+  /**
+   * Validate input
+   */
+  validateInput(e) {
+    const value = e.target.value
 
-  handleInputChange(e) {
-    let value = e.target.value
-
-    if (value) {
-      value = parseFloat(value)
+    if (isNaN(this.state.value)) {
+      this.setState({ value: 0 })
+    } else {
       this.setState({ value: value })
     }
+  }
 
-    // add value
+  /**
+   * Handle input change event
+   */
+  handleInputChange(e) {
+    // exit if value is not a valid number
+    if (isNaN(e.target.value)) return
+    const value = parseFloat(e.target.value)
+
+    // add value and final price to product
     this.product.form.value = value
+    this.product.price.total = value * parseFloat(this.product.price.regular)
 
-    // add price
-    if (value) {
-      this.product.price.total = parseFloat(value) * parseFloat(this.product.price.regular)
-    } else {
-      this.product.price.total = ''
-    }
+    console.log(value);
 
-    this._addProduct(this.product, this.state.checked)
+    //this._addProduct(this.product, this.state.checked)
   }
 
   render() {
@@ -102,10 +136,11 @@ class Product extends Component {
             <input className='col'
                    type='number'
                    id={ this.product.category.id + '-' + this.product.sku }
-                   onBlur={ this.handleInputChange.bind(this) }
                    min='1'
                    max='10000'
-                   defaultValue={ this.state.value } />
+                   value={ this.state.value }
+                   onBlur={ this.handleInputChange.bind(this) }
+                   onChange={ this.validateInput.bind(this) } />
 
             <label className='col col-form-label' htmlFor={ this.product.category.id + '-' + this.product.sku }>
               { this.product.form.label }
@@ -125,7 +160,9 @@ Product.propTypes = {
 const mapStateToProps = (state) => { return { state: state } }
 
 const mapDispatchToProps = {
-  addProduct
+  addProduct,
+  removeProduct,
+  updateProduct
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Product)

@@ -1,7 +1,7 @@
 const products = [
   // BOILER
-  { sku:'1', title: 'Газовый одноконтурный', category: { id: 'boiler', title: 'Выбор котла' }, price: { regular: 1000, service: 100 }, form: { type: 'radio', name: 'gas' }, description: '', img_src: '#' },
-  { sku:'2', title: 'Газовый двухконтурный', category: { id: 'boiler', title: 'Выбор котла' }, price: { regular: 1000, service: 100 }, form: { type: 'radio', name: 'gas' }, description: '', img_src: '#' },
+  { sku:'1', title: 'Газовый одноконтурный', category: { id: 'boiler', title: 'Выбор котла' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox', name: 'gas' }, description: '', img_src: '#' },
+  { sku:'2', title: 'Газовый двухконтурный', category: { id: 'boiler', title: 'Выбор котла' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox', name: 'gas' }, description: '', img_src: '#' },
   { sku:'3', title: 'Электрический', category: { id: 'boiler', title: 'Выбор котла' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   { sku:'4', title: 'Дизельный', category: { id: 'boiler', title: 'Выбор котла' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   { sku:'5', title: 'Твердотопливный', category: { id: 'boiler', title: 'Выбор котла' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
@@ -9,9 +9,9 @@ const products = [
   { sku:'7', title: 'Бойлер косвенного нагрева более 200л', category: { id: 'boiler', title: 'Выбор котла' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   { sku:'8', title: 'Энергоаккумулятор до 500л', category: { id: 'boiler', title: 'Выбор котла' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   // BOILER PIPING
-  { sku:'9', title: ' Радиаторная сеть', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'radio', name: 'radiator' }, description: '', img_src: '#' },
-  { sku:'10', title: 'Радиаторы + теплый пол', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'radio', name: 'radiator' }, description: '', img_src: '#' },
-  { sku:'11', title: 'Радиаторы + теплый пол + бойлер косвенного нагрева', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'radio', name: 'radiator' }, description: '', img_src: '#' },
+  { sku:'9', title: ' Радиаторная сеть', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox', name: 'radiator' }, description: '', img_src: '#' },
+  { sku:'10', title: 'Радиаторы + теплый пол', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox', name: 'radiator' }, description: '', img_src: '#' },
+  { sku:'11', title: 'Радиаторы + теплый пол + бойлер косвенного нагрева', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox', name: 'radiator' }, description: '', img_src: '#' },
   { sku:'12', title: 'Объвязка с насосными модулями', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   { sku:'13', title: 'Погодозависимая автоматика', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   { sku:'14', title: 'Автоматика регулировки температуры в помещениях', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
@@ -38,7 +38,7 @@ const products = [
   { sku:'31', title: 'Монтаж корпуса фильтра bigblue', category: { id: 'water-treatment', title: 'Выбор системы водоподготовки' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
   { sku:'32', title: 'Монтаж умягчителя waterboss', category: { id: 'water-treatment', title: 'Выбор системы водоподготовки' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
   { sku:'33', title: 'Монтаж системы фильтрации колонного типа', category: { id: 'water-treatment', title: 'Выбор системы водоподготовки' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  // WATER TREATMENT
+  // EXTERNAL-WORKS
   { sku:'34', title: 'Монтаж СБО Юнилос-астра 5', category: { id: 'external-works', title: 'Наружние работы' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   { sku:'35', title: 'Монтаж вентиляционного стояка канализации', category: { id: 'external-works', title: 'Наружние работы' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   { sku:'36', title: 'Монтаж скавжинного насоса с адаптером', category: { id: 'external-works', title: 'Наружние работы' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },

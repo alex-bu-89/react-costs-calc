@@ -1,5 +1,3 @@
-import _ from 'lodash'
-
 // ------------------------------------
 // Constants
 // ------------------------------------
@@ -18,10 +16,10 @@ function _addProduct (product) {
   }
 }
 
-function _removeProduct (product, index) {
+function _removeProduct (index) {
   return {
     type    : REMOVE_PRODUCT,
-    payload : { product: product, index: index }
+    payload : { index: index }
   }
 }
 
@@ -32,52 +30,64 @@ function _updateProduct (product, index) {
   }
 }
 
-export function addProduct(product, checked = false) {
+export function addProduct(product) {
   return (dispatch, getState) => {
 
-    const products = getState().calculator.products
-    const index = _.indexOf(products, product)
+    // const products = getState().calculator.products
+    // const index = _.indexOf(products, product)
 
-    // remove prev. product if radio button
-    if (product.form.type === 'radio') {
-      const match = _.find(products, (p) => {
-        return p.form.name === product.form.name
-      })
-      const index = _.indexOf(products, match)
-
-      if (typeof match !== 'undefined' && index !== -1) {
-        dispatch(_removeProduct(match, index))
-      }
-    }
-
-    // remove product while unchecking
-    if (product.form.type === 'checkbox' && checked === true) {
-      dispatch(_removeProduct(product, index))
-      return
-    }
-
-    // update product if value changed
-    if (product.form.type === 'number') {
-
-      if (product.form.value === '' || product.form.value == '0') {
-        if (index > -1) {
-          dispatch(_removeProduct(product, index))
-        }
-
-        // do nothing if value is empty
-        return
-
-      } else if (product.form.value) {
-        if (index > -1) {
-          dispatch(_updateProduct(product, index))
-        }
-      }
-
-
-      if (index > -1) { return }
-    }
+    // // remove prev. product if radio button
+    // if (product.form.type === 'radio') {
+    //   const match = _.find(products, (p) => {
+    //     return p.form.name === product.form.name
+    //   })
+    //   const index = _.indexOf(products, match)
+    //
+    //   if (typeof match !== 'undefined' && index !== -1) {
+    //     dispatch(_removeProduct(match, index))
+    //   }
+    // }
+    //
+    // // remove product while unchecking
+    // if (product.form.type === 'checkbox' && checked === true) {
+    //   dispatch(_removeProduct(product, index))
+    //   return
+    // }
+    //
+    // // update product if value changed
+    // if (product.form.type === 'number') {
+    //
+    //   if (product.form.value === '' || product.form.value == '0') {
+    //     if (index > -1) {
+    //       dispatch(_removeProduct(product, index))
+    //     }
+    //
+    //     // do nothing if value is empty
+    //     return
+    //
+    //   } else if (product.form.value) {
+    //     if (index > -1) {
+    //       dispatch(_updateProduct(product, index))
+    //     }
+    //   }
+    //
+    //
+    //   if (index > -1) { return }
+    // }
 
     dispatch(_addProduct(product))
+  }
+}
+
+export function removeProduct(index) {
+  return (dispatch, getState) => {
+    dispatch(_removeProduct(index))
+  }
+}
+
+export function updateProduct(product, index) {
+  return (dispatch, getState) => {
+    dispatch(_updateProduct(product, index))
   }
 }
 
