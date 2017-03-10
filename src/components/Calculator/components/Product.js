@@ -5,7 +5,8 @@ import _ from 'lodash'
 
 const FORM_CHECKBOX = 'checkbox',
       FORM_RADIO = 'radio',
-      FORM_NUMBER = 'number'
+      FORM_NUMBER = 'number',
+      MAX_INPUT = 10000
 
 class Product extends Component {
 
@@ -72,27 +73,34 @@ class Product extends Component {
    */
   validateInput(e) {
     const value = e.target.value
-
-    if (isNaN(this.state.value)) {
-      this.setState({ value: 0 })
-    } else {
-      this.setState({ value: value })
-    }
+    this.setState({ value: value })
   }
 
   /**
    * Handle input change event
    */
   handleInputChange(e) {
+    let value = e.target.value
+
     // exit if value is not a valid number
-    if (isNaN(e.target.value)) return
-    const value = parseFloat(e.target.value)
+    if (isNaN(parseFloat(value))) {
+      this.setState({ value: value = 0 })
+      return
+    }
+
+    // get number
+    value = parseFloat(value)
+
+    // validate number
+    if (value > MAX_INPUT) {
+      this.setState({ value: value = MAX_INPUT })
+    } else if (value < 0) {
+      this.setState({ value: value = 0 })
+    }
 
     // add value and final price to product
     this.product.form.value = value
     this.product.price.total = value * parseFloat(this.product.price.regular)
-
-    console.log(value);
 
     //this._addProduct(this.product, this.state.checked)
   }
