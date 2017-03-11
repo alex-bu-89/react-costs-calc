@@ -10,17 +10,12 @@ import products from './../../../config/products'
 import { getProductsByCategories } from './utils'
 import StepZilla from './components/Wizard'
 import Fieldset from './components/Fieldset'
+import Estimate from './components/Estimate'
 
 class Calculator extends Component {
 
   constructor(props) {
     super(props)
-
-    this.p = []
-  }
-
-  componentWillUpdate(nextProps) {
-    this.p = nextProps.state.calculator.products
   }
 
   render () {
@@ -34,7 +29,6 @@ class Calculator extends Component {
       { id: 'water-system', name: 'Водоснабжение', data: getProductsByCategories(['water-system', 'water-treatment'], products) },
       { id: 'external-work', name: 'Наружные работы', data: getProductsByCategories(['external-works'], products) },
     ]
-
 
     return (
       <section id='calculator' name='calculator'>
@@ -62,26 +56,8 @@ class Calculator extends Component {
             })
           }
         </div>
-        <table className='table'>
-          <tbody>
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Price</th>
-            </tr>
-            {
-              this.p.map((product, i) => {
-                return (
-                  <tr key={i}>
-                    <td>{ product.sku }</td>
-                    <td>{ product.title + ((product.form.value) ? ' x ' + product.form.value + ' ' + product.form.label : '') }</td>
-                    <td>{ product.price.total + ' руб.' }</td>
-                  </tr>
-                )
-              })
-            }
-          </tbody>
-        </table>
+
+        <Estimate />
       </section>
     )
   }

@@ -80,16 +80,18 @@ class Product extends Component {
    * Handle input change event
    */
   handleInputChange(e) {
+    const products = this.props.state.calculator.products
+    const index = _.indexOf(products, _.find(products, (product) => { return product.sku === this.product.sku }))
     let value = e.target.value
 
     // exit if value is not a valid number
     if (isNaN(parseFloat(value))) {
       this.setState({ value: value = 0 })
-      return
     }
 
-    // get number
+    // parse string as number
     value = parseFloat(value)
+    this.setState({ value: value })
 
     // validate number
     if (value > MAX_INPUT) {
@@ -102,7 +104,19 @@ class Product extends Component {
     this.product.form.value = value
     this.product.price.total = value * parseFloat(this.product.price.regular)
 
-    //this._addProduct(this.product, this.state.checked)
+    // remove product if value is null and already exist in the state
+    if (value == 0) {
+      if (index > -1) {
+        this._removeProduct(index)
+        return
+      }
+      return
+    } else if (index > -1) {
+      this._updateProduct(this.product, index)
+      return
+    }
+
+    this._addProduct(this.product)
   }
 
   render() {
