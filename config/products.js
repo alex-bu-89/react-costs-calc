@@ -17,14 +17,14 @@ const products = [
   { sku:'14', title: 'Автоматика регулировки температуры в помещениях', category: { id: 'boiler-piping', title: 'Выбор типа объвязки котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   // BOILER PIPING
   { sku:'15', title: 'Коаксиальный', category: { id: 'chimney', title: 'Выбор дымохода' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
-  { sku:'16', title: 'Сендвич (нержавейка)', category: { id: 'chimney', title: 'Выбор дымохода' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'м2' }, description: '', img_src: '#' },
+  { sku:'16', title: 'Сендвич (нержавейка)', category: { id: 'chimney', title: 'Выбор дымохода' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'м²' }, description: '', img_src: '#' },
   { sku:'17', title: 'Проход перекрытий или стен газобетон-дерево', category: { id: 'chimney', title: 'Выбор дымохода' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
   { sku:'18', title: 'Проход перекрытий или стен кирпич-бетон', category: { id: 'chimney', title: 'Выбор дымохода' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
   // HEATING
   { sku:'19', title: 'Количество радиаторов', category: { id: 'heating', title: 'Выбор отопительных приборов в помещениях' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
   { sku:'20', title: 'Количество напольных конвекторов', category: { id: 'heating', title: 'Выбор отопительных приборов в помещениях' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
   { sku:'21', title: 'Количество помещений с теплым полом', category: { id: 'heating', title: 'Выбор отопительных приборов в помещениях' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  { sku:'23', title: 'Площадь теплого пола', category: { id: 'heating', title: 'Выбор отопительных приборов в помещениях' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'м2' }, description: '', img_src: '#' },
+  { sku:'23', title: 'Площадь теплого пола', category: { id: 'heating', title: 'Выбор отопительных приборов в помещениях' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'м²' }, description: '', img_src: '#' },
   { sku:'24', title: 'Полусухая стяжка теплого пола', category: { id: 'heating', title: 'Выбор отопительных приборов в помещениях' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   // CANALIZATION
   { sku:'25', title: 'Количество точек по дому', category: { id: 'canalisation', title: 'Канализация внутри дома' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },

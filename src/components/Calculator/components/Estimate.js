@@ -7,14 +7,31 @@ class Estimate extends Component {
     super(props)
 
     this.products = []
+    this.price = {
+      products_price: this.props.state.calculator.products_price,
+      service_price: this.props.state.calculator.service_price,
+      total_price: this.props.state.calculator.total_price
+    }
   }
 
   componentWillUpdate(nextProps) {
     this.products = nextProps.state.calculator.products
+
+    this.price = {
+      products_price: nextProps.state.calculator.products_price,
+      service_price: nextProps.state.calculator.service_price,
+      total_price: nextProps.state.calculator.total_price
+    }
   }
 
   componentWillMount() {
     this.products = this.props.state.calculator.products
+
+    this.price = {
+      products_price: this.props.state.calculator.products_price,
+      service_price: this.props.state.calculator.service_price,
+      total_price: this.props.state.calculator.total_price
+    }
   }
 
   render() {
@@ -37,6 +54,13 @@ class Estimate extends Component {
               )
             })
           }
+          <tr className='text-right'>
+            <td colSpan='3'>
+              <p>Стоимость материалов: { this.price.products_price }</p>
+              <p>Стоимость работ: { this.price.service_price }</p>
+              <p><strong>Общая стоимость: { this.price.total_price }</strong></p>
+            </td>
+          </tr>
         </tbody>
       </table>
     )

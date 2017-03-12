@@ -1,10 +1,14 @@
+import _ from 'lodash'
+import { getProductPrice } from '../components/Calculator/utils'
+
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const TEST = 'TEST'
-export const ADD_PRODUCT = 'ADD_PRODUCT'
-export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
-export const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
+export const TEST = 'TEST',
+             ADD_PRODUCT = 'ADD_PRODUCT',
+             REMOVE_PRODUCT = 'REMOVE_PRODUCT',
+             UPDATE_PRODUCT = 'UPDATE_PRODUCT',
+             UPDATE_PRICE = 'UPDATE_PRICE'
 
 // ------------------------------------
 // Actions
@@ -30,64 +34,37 @@ function _updateProduct (product, index) {
   }
 }
 
+function _updatePrice (price) {
+  return {
+    type    : UPDATE_PRICE,
+    payload : { price: price }
+  }
+}
+
 export function addProduct(product) {
   return (dispatch, getState) => {
-
-    // const products = getState().calculator.products
-    // const index = _.indexOf(products, product)
-
-    // // remove prev. product if radio button
-    // if (product.form.type === 'radio') {
-    //   const match = _.find(products, (p) => {
-    //     return p.form.name === product.form.name
-    //   })
-    //   const index = _.indexOf(products, match)
-    //
-    //   if (typeof match !== 'undefined' && index !== -1) {
-    //     dispatch(_removeProduct(match, index))
-    //   }
-    // }
-    //
-    // // remove product while unchecking
-    // if (product.form.type === 'checkbox' && checked === true) {
-    //   dispatch(_removeProduct(product, index))
-    //   return
-    // }
-    //
-    // // update product if value changed
-    // if (product.form.type === 'number') {
-    //
-    //   if (product.form.value === '' || product.form.value == '0') {
-    //     if (index > -1) {
-    //       dispatch(_removeProduct(product, index))
-    //     }
-    //
-    //     // do nothing if value is empty
-    //     return
-    //
-    //   } else if (product.form.value) {
-    //     if (index > -1) {
-    //       dispatch(_updateProduct(product, index))
-    //     }
-    //   }
-    //
-    //
-    //   if (index > -1) { return }
-    // }
-
     dispatch(_addProduct(product))
+
+    const price = getProductPrice(getState().calculator.products)
+    dispatch(_updatePrice(price))
   }
 }
 
 export function removeProduct(index) {
   return (dispatch, getState) => {
     dispatch(_removeProduct(index))
+
+    const price = getProductPrice(getState().calculator.products)
+    dispatch(_updatePrice(price))
   }
 }
 
 export function updateProduct(product, index) {
   return (dispatch, getState) => {
     dispatch(_updateProduct(product, index))
+
+    const price = getProductPrice(getState().calculator.products)
+    dispatch(_updatePrice(price))
   }
 }
 
@@ -113,12 +90,21 @@ const ACTION_HANDLERS = {
   },
 
   [UPDATE_PRODUCT]: (state, action) => {
-    let products = state.products.slice()
+    let products = state.products.slice() // immutable
     products[action.payload.index] = action.payload.product
 
     return {
       ...state,
       products: products
+    }
+  },
+
+  [UPDATE_PRICE]: (state, action) => {
+    return {
+      ...state,
+      products_price: action.payload.price.products_price,
+      service_price: action.payload.price.service_price,
+      total_price: action.payload.price.total_price
     }
   }
 }
@@ -128,7 +114,7 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 const initialState = {
   products: [],
-  price: 0,
+  products_price: 0,
   service_price: 0,
   total_price: 0,
   isEmpty: true
