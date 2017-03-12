@@ -29,7 +29,8 @@ class Wrapper extends Component {
             <hr className='primary' />
           </div>
           <div className='wizard step-progress text-left col'>
-            <StepZilla steps={ steps } />
+            <StepZilla steps={ steps }
+                       preventEnterSubmission={ true } />
           </div>
         </div>
       </section>

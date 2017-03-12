@@ -6,6 +6,10 @@ class Contacts extends Component {
     super(props)
   }
 
+  isValidated() {
+    return true
+  }
+
   render() {
     return (
       <form>
