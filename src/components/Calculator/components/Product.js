@@ -139,35 +139,45 @@ class Product extends Component {
 
       case FORM_CHECKBOX:
         return (
-          <label className='custom-control custom-checkbox' onChange={ this.handleCheckboxClick.bind(this) }>
-            <input type='checkbox'
-                   className='custom-control-input'
-                   defaultChecked={ this.state.checked } />
-            <span className='custom-control-indicator'></span>
-            <span className='custom-control-description'>{ this.product.title + ' ' + this.state.checked}</span>
-          </label>
+          <tr>
+            <td>
+              <label className='custom-control custom-checkbox' onChange={ this.handleCheckboxClick.bind(this) }>
+                <input type='checkbox'
+                       className='custom-control-input'
+                       defaultChecked={ this.state.checked } />
+                <span className='custom-control-indicator'></span>
+                <span className='custom-control-description'>{ this.product.title }</span>
+              </label>
+            </td>
+            <td>{ this.product.price.regular }</td>
+            <td>{ this.product.price.service }</td>
+          </tr>
         )
 
       case FORM_NUMBER:
         return (
-          <div className='form-group row'>
-            <label className='col col-form-label' htmlFor={ this.product.category.id + '-' + this.product.sku }>
-              { this.product.title }
-            </label>
+          <tr>
+            <td>
+              <label className='col col-form-label' htmlFor={ this.product.category.id + '-' + this.product.sku }>
+                { this.product.title }
+              </label>
 
-            <input className='col'
-                   type='number'
-                   id={ this.product.category.id + '-' + this.product.sku }
-                   min='1'
-                   max='10000'
-                   value={ this.state.value }
-                   onBlur={ this.handleInputChange.bind(this) }
-                   onChange={ this.validateInput.bind(this) } />
+              <input className='col'
+                     type='number'
+                     id={ this.product.category.id + '-' + this.product.sku }
+                     min='1'
+                     max='10000'
+                     value={ this.state.value }
+                     onBlur={ this.handleInputChange.bind(this) }
+                     onChange={ this.validateInput.bind(this) } />
 
-            <label className='col col-form-label' htmlFor={ this.product.category.id + '-' + this.product.sku }>
-              { this.product.form.label }
-            </label>
-          </div>
+              <label className='col col-form-label' htmlFor={ this.product.category.id + '-' + this.product.sku }>
+                { this.product.form.label }
+              </label>
+            </td>
+            <td>{ this.product.price.regular }</td>
+            <td>{ this.product.price.service }</td>
+          </tr>
         )
       default:
         return null

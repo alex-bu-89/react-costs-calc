@@ -50,39 +50,47 @@ class Estimate extends Component {
 
   render() {
     return (
-      <table className='table'>
-          {
-            this.categories.map((category, i) => {
-              return (
-                <tbody key={i}>
-                  <tr>
-                    <td colSpan='2'><strong>{ category.title }</strong></td>
-                  </tr>
+      <div className='container'>
+        <table className='table'>
+            {
+              this.categories.map((category, i) => {
+                return (
+                  <tbody key={i}>
+                    <tr>
+                      <td colSpan='2'><strong>{ category.title }</strong></td>
+                    </tr>
 
-                  {
-                    category.products.map((product, y) => {
-                      return (
-                        <tr className='products' key={y}>
-                          <td>{ product.title + ((product.form.value) ? ' x ' + product.form.value + ' ' + product.form.label : '') }</td>
-                          <td className='text-right'>{ product.price.total + ' руб.' }</td>
-                        </tr>
-                      )
-                    })
-                  }
-                </tbody>
-              )
-            })
-          }
-          <tbody>
-            <tr className='text-right'>
-              <td colSpan='2'>
-                <p>Стоимость материалов: { this.price.products_price } руб.</p>
-                <p>Стоимость работ: { this.price.service_price } руб.</p>
-                <p className='lead'>Общая стоимость: { this.price.total_price } руб.</p>
-              </td>
-            </tr>
-        </tbody>
-      </table>
+                    {
+                      category.products.map((product, y) => {
+                        return (
+                          <tr className='products' key={y}>
+                            <td>{ product.title + ((product.form.value) ? ' x ' + product.form.value + ' ' + product.form.label : '') }</td>
+                            <td className='text-right'>{ product.price.total + ' руб.' }</td>
+                          </tr>
+                        )
+                      })
+                    }
+                  </tbody>
+                )
+              })
+            }
+            <tbody>
+              <tr className='text-right'>
+                <td colSpan='2'>
+                  <p>Стоимость материалов: { this.price.products_price } руб.</p>
+                  <p>Стоимость работ: { this.price.service_price } руб.</p>
+                  <p className='lead'>Общая стоимость: { this.price.total_price } руб.</p>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+        
+        <div className='container text-center'>
+          <button type='button'
+                  className='btn btn-primary'
+                  onClick={ () => this.props.jumpToStep(0) }>Вернуться к расчету</button>
+        </div>
+      </div>
     )
   }
 }

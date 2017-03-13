@@ -56,7 +56,11 @@ class Calculator extends Component {
             })
           }
         </div>
-
+        <div className='container text-center'>
+          <button type='button'
+                  className='btn btn-primary'
+                  onClick={ () => this.props.jumpToStep(1) }>Получить смету</button>
+        </div>
         <Estimate />
       </section>
     )

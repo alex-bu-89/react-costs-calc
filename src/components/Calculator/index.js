@@ -17,7 +17,7 @@ class Wrapper extends Component {
     // building steps for wizzard
     const steps = [
       { name: 'Калькулятор', component: <Calculator /> },
-      { name: 'Ваши контакты', component: <Contacts /> },
+      // { name: 'Ваши контакты', component: <Contacts /> },
       { name: 'Расчет сметы', component: <Estimate /> }
     ]
 
@@ -30,7 +30,10 @@ class Wrapper extends Component {
           </div>
           <div className='wizard step-progress text-left col'>
             <StepZilla steps={ steps }
-                       preventEnterSubmission={ true } />
+                       preventEnterSubmission={ true }
+                       stepsNavigation={ false }
+                       showSteps={ false }
+                       showNavigation={ false } />
           </div>
         </div>
       </section>

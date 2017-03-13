@@ -108,14 +108,14 @@ export default class StepZilla extends Component {
   // this utility method lets Child components invoke a direct jump to another step
   jumpToStep(evt) {
 
-    evt.stopPropagation();
-    let target = evt.currentTarget;
-
     if (evt.target == undefined) {
       // a child step wants to invoke a jump between steps. in this case 'evt' is the numeric step number and not the JS event
       this.setNavState(evt);
     }
     else { // the main navigation step ui is invoking a jump between steps
+
+      evt.stopPropagation();
+      let target = evt.currentTarget;
 
       if (!this.props.stepsNavigation || target.value == this.state.compState) { // if stepsNavigation is turned off or user clicked on existing step again (on step 2 and clicked on 2 again) then ignore
         evt.preventDefault();

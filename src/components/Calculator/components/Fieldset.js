@@ -12,26 +12,35 @@ class Fieldset extends Component {
 
   render() {
     return (
-      <form className='d-flex align-items-stretch'>
+      <div className='tab-wrapper'>
         {
           this.data.map((category, i) => {
             return (
-              <fieldset key={ i }>
-                <h6>{ category.title }</h6>
-
-                {
-                  category.products.map((product, y) => {
-                    return <Product
-                              product={ product }
-                              key={ y } />
-                  })
-                }
-
-              </fieldset>
+              <table className='table prouct-table' key={ i }>
+                <thead>
+                  <tr>
+                    <th>Наименование работ</th>
+                    <th>Стоимость работ</th>
+                    <th>Стоимость оборудования</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colSpan='3'><h6>{ category.title }</h6></td>
+                  </tr>
+                  {
+                    category.products.map((product, y) => {
+                      return <Product
+                                product={ product }
+                                key={ y } />
+                    })
+                  }
+                </tbody>
+              </table>
             )
           })
         }
-      </form>
+      </div>
     )
   }
 }

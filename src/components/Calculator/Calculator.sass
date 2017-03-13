@@ -1,36 +1,55 @@
-.table
-  margin: 20px 0
+#calculator
+  .table
+    margin: 0
 
-  tr, td, tbody
-    border: 0
-
-  tbody+tbody
-    border-top: 1px solid $light-grey
-
-  tbody
-    tr:first-child
-      td
-        padding-top: 15px
-
-    tr:last-child
-      td
-        padding-bottom: 15px
-
-  td
-    padding: 0px
-
-  .products
-    font-size: 14px
-    padding: 0px
-
+    tr, td, tbody, thead th
+      border: 0
+    thead th
+      border-bottom: 1px solid $light-grey
     td
-      padding-left: 20px
+      padding: 3px
+    tbody+tbody
+      border-top: 1px solid $light-grey
+    tbody
+      tr:first-child
+        td
+          padding-top: 15px
+      tr:last-child
+        td
+          padding-bottom: 15px
+    .products
+      padding: 0px
+      td
+        padding-left: 20px
+    p
+      margin-bottom: 5px
+    .lead
+      font-weight: bold
 
-  p
-    margin-bottom: 5px
+  .tab-wrapper
+    padding: 20px
+    border: 3px solid $primary-color
 
-  .lead
-    font-weight: bold
+  .nav-tabs
+    border-bottom: 0
+
+    .nav-link
+      border-radius: 0
+      border: 3px solid transparent
+      color: #979797
+
+    .nav-item
+      margin-bottom: -3px
+
+    .nav-link:hover
+      border: 3px solid $primary-color
+      color: $primary-color
+    
+    .nav-item.show .nav-link,
+    .nav-link.active
+      border: 3px solid $primary-color
+      background: $primary-color
+      color: #fff
 
 .wizard
   .multi-step,
