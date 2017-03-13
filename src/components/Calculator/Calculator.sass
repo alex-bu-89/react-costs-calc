@@ -4,27 +4,49 @@
 
     tr, td, tbody, thead th
       border: 0
-    thead th
-      border-bottom: 1px solid $light-grey
+      vertical-align: middle
+
     td
       padding: 3px
+
     tbody+tbody
-      border-top: 1px solid $light-grey
-    tbody
-      tr:first-child
-        td
-          padding-top: 15px
-      tr:last-child
-        td
-          padding-bottom: 15px
+      border-top: 0
+
     .products
       padding: 0px
+
       td
         padding-left: 20px
+
     p
       margin-bottom: 5px
+
     .lead
       font-weight: bold
+
+  .prouct-table
+    th
+      padding: 0px
+
+    .product-title
+      width: 60%
+
+    .product-price
+      width: 20%
+      text-align: center
+
+    .product-category
+      padding: 10px 15px
+      background: $light-grey
+      border-top: 15px solid #fff
+      border-bottom: 15px solid #fff
+      font-weight: bolder
+
+    .form-control
+      width: auto
+      display: inline-block
+      margin: 0 15px
+      padding: 5px 10px
 
   .tab-wrapper
     padding: 20px
@@ -44,12 +66,15 @@
     .nav-link:hover
       border: 3px solid $primary-color
       color: $primary-color
-    
+
     .nav-item.show .nav-link,
     .nav-link.active
       border: 3px solid $primary-color
       background: $primary-color
       color: #fff
+
+  .control-calc-box
+    margin: 30px 0 20px 0
 
 .wizard
   .multi-step,

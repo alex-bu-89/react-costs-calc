@@ -39,15 +39,17 @@ a:active, a:hover, a:focus
 .no-pt
   padding-top: 0px !important
 
+.no-pt
+  padding-top: 0px !important
+
+
+
 form
   color: $grey-text
 
   fieldset
     border: solid #f7f7f9
     padding: 1rem
-
-  .form-control
-    font-size: 15px
 
   ::-webkit-input-placeholder
     color: $grey-text !important
@@ -61,7 +63,23 @@ form
   ::-moz-placeholder
     color: $grey-text !important
 
+.form-control
+    font-size: 15px
+    border-radius: 0
+    color: $grey-text
+
+.custom-checkbox
+  .custom-control-indicator
+    border-radius: 0
+
+  .custom-control-input:checked~.custom-control-indicator
+    background-color: $primary-color
+
+  .custom-control-input:focus~.custom-control-indicator
+    +box-shadow(0 0 0 1px #fff, 0 0 0 3px $primary-color)
+
 .btn
+  border-radius: 0
 
   &:hover
     cursor: pointer
@@ -75,6 +93,9 @@ form
 
   i
     margin-right: 5px
+
+.btn-outline-secondary
+  border: 2px solid #fff
 
 // MARKETING CONTENT
 // --------------------------------------------------

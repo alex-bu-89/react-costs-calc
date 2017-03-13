@@ -8,25 +8,26 @@ class Fieldset extends Component {
     super(props)
 
     this.data = props.data
+    this.jumpToStep = props.jumpToStep
   }
 
   render() {
     return (
       <div className='tab-wrapper'>
-        {
-          this.data.map((category, i) => {
-            return (
-              <table className='table prouct-table' key={ i }>
-                <thead>
+        <table className='table prouct-table'>
+          <thead>
+            <tr>
+              <th className='product-title'>Наименование работ</th>
+              <th className='product-price'>Стоимость работ</th>
+              <th className='product-price'>Стоимость оборудования</th>
+            </tr>
+          </thead>
+          {
+            this.data.map((category, i) => {
+              return (
+                <tbody key={i}>
                   <tr>
-                    <th>Наименование работ</th>
-                    <th>Стоимость работ</th>
-                    <th>Стоимость оборудования</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td colSpan='3'><h6>{ category.title }</h6></td>
+                    <td className='product-category' colSpan='3'>{ category.title }</td>
                   </tr>
                   {
                     category.products.map((product, y) => {
@@ -36,10 +37,15 @@ class Fieldset extends Component {
                     })
                   }
                 </tbody>
-              </table>
-            )
-          })
-        }
+              )
+            })
+          }
+        </table>
+        <div className='container text-center control-calc-box'>
+          <button type='button'
+                  className='btn btn-primary'
+                  onClick={ () => this.jumpToStep(1) }>Рассчитать смету</button>
+        </div>
       </div>
     )
   }

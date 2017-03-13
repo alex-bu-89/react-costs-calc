@@ -21,7 +21,7 @@ export const HomeView = () => (
     <Calculator />
 
     {/* ------ SERVICE ------ */}
-    <section id='service' name='service'>
+    <section id='service' className='no-pt' name='service'>
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12 text-center'>

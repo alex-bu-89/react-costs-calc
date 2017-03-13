@@ -149,8 +149,8 @@ class Product extends Component {
                 <span className='custom-control-description'>{ this.product.title }</span>
               </label>
             </td>
-            <td>{ this.product.price.regular }</td>
-            <td>{ this.product.price.service }</td>
+            <td className='product-price'>{ this.product.price.service } руб.</td>
+            <td className='product-price'>{ this.product.price.regular } руб.</td>
           </tr>
         )
 
@@ -158,11 +158,11 @@ class Product extends Component {
         return (
           <tr>
             <td>
-              <label className='col col-form-label' htmlFor={ this.product.category.id + '-' + this.product.sku }>
+              <label className='col-form-label' htmlFor={ this.product.category.id + '-' + this.product.sku }>
                 { this.product.title }
               </label>
 
-              <input className='col'
+              <input className='form-control'
                      type='number'
                      id={ this.product.category.id + '-' + this.product.sku }
                      min='1'
@@ -171,12 +171,12 @@ class Product extends Component {
                      onBlur={ this.handleInputChange.bind(this) }
                      onChange={ this.validateInput.bind(this) } />
 
-              <label className='col col-form-label' htmlFor={ this.product.category.id + '-' + this.product.sku }>
+              <label className='col-form-label' htmlFor={ this.product.category.id + '-' + this.product.sku }>
                 { this.product.form.label }
               </label>
             </td>
-            <td>{ this.product.price.regular }</td>
-            <td>{ this.product.price.service }</td>
+            <td className='product-price'>{ this.product.price.service } руб.</td>
+            <td className='product-price'>{ this.product.price.regular } руб.</td>
           </tr>
         )
       default:

@@ -50,18 +50,13 @@ class Calculator extends Component {
               return (
                 <div className={ 'tab-pane ' + ((i === 0)? 'active' : '') } id={ tab.id } role='tabpanel' key={ i } >
                   <Fieldset
-                    data={ tab.data } />
+                    data={ tab.data }
+                    jumpToStep = { this.props.jumpToStep } />
                 </div>
               )
             })
           }
         </div>
-        <div className='container text-center'>
-          <button type='button'
-                  className='btn btn-primary'
-                  onClick={ () => this.props.jumpToStep(1) }>Получить смету</button>
-        </div>
-        <Estimate />
       </section>
     )
   }
