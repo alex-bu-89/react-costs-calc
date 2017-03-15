@@ -81,7 +81,7 @@ class Header extends Component {
             <div className='inner cover'>
               <h1 className='cover-heading display-4'>Сантехника для загородного дома</h1>
               <p className='lead'>
-                Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев
+                У нас самые выгодные цены по Санкт-Петербургу и Лен. Области
               </p>
               <p className='lead'>
                 <Link className='btn btn-lg btn-outline-secondary' activeClass='active' to='calculator' spy={true} smooth={true} offset={50} duration={1000}>
