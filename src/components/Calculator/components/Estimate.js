@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
-import { getProductsByCategories } from './../utils'
+import { getProductsByCategories, formatMoney } from './../utils'
 
 class Estimate extends Component {
 
@@ -51,44 +51,61 @@ class Estimate extends Component {
   render() {
     return (
       <div className='container'>
-        <table className='table'>
-            {
-              this.categories.map((category, i) => {
-                return (
-                  <tbody key={i}>
-                    <tr>
-                      <td colSpan='2'><strong>{ category.title }</strong></td>
-                    </tr>
+        <div className='tab-wrapper'>
+          <table className='table prouct-table estimate-table'>
+              <thead>
+                <tr>
+                  <th className='product-title'></th>
+                  <th className='product-price'>Стоимость работ</th>
+                  <th className='product-price'>Стоимость оборудования</th>
+                </tr>
+              </thead>
+              {
+                this.categories.map((category, i) => {
+                  return (
+                    <tbody key={i}>
+                      <tr>
+                        <td className='product-category' colSpan='3'><strong>{ category.title }</strong></td>
+                      </tr>
 
-                    {
-                      category.products.map((product, y) => {
-                        return (
-                          <tr className='products' key={y}>
-                            <td>{ product.title + ((product.form.value) ? ' x ' + product.form.value + ' ' + product.form.label : '') }</td>
-                            <td className='text-right'>{ product.price.total + ' руб.' }</td>
-                          </tr>
-                        )
-                      })
-                    }
-                  </tbody>
-                )
-              })
-            }
-            <tbody>
-              <tr className='text-right'>
-                <td colSpan='2'>
-                  <p>Стоимость материалов: { this.price.products_price } руб.</p>
-                  <p>Стоимость работ: { this.price.service_price } руб.</p>
-                  <p className='lead'>Общая стоимость: { this.price.total_price } руб.</p>
-                </td>
-              </tr>
-          </tbody>
-        </table>
-        
-        <div className='container text-center'>
-          <button type='button'
-                  className='btn btn-primary'
-                  onClick={ () => this.props.jumpToStep(0) }>Вернуться к расчету</button>
+                      {
+                        category.products.map((product, y) => {
+                          return (
+                            <tr className='products' key={y}>
+                              <td>{ product.title + ((product.form.value) ? ' x ' + product.form.value + ' ' + product.form.label : '') }</td>
+                              <td className='text-center'>{ product.price.service + ' руб.' }</td>
+                              <td className='text-center'>{ product.price.total + ' руб.' }</td>
+                            </tr>
+                          )
+                        })
+                      }
+                    </tbody>
+                  )
+                })
+              }
+              <tbody>
+                <tr className='text-center price-total'>
+                  <td colSpan='3'>
+                    <hr />
+                    <p>Стоимость оборудования: { formatMoney(this.price.products_price) } руб.</p>
+                    <p>Стоимость работ: { formatMoney(this.price.service_price) } руб.</p>
+                    <p className='lead'>Общая стоимость: { formatMoney(this.price.total_price) } руб.</p>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+
+          <div className='container text-center control-estimate'>
+            <button type='button'
+                    className='btn btn-primary'
+                    onClick={ () => this.props.jumpToStep(0) }>Вернуться к расчету</button>
+
+            <button type='button'
+                    className='btn btn-primary'>Распечатать</button>
+
+            <button type='button'
+                    className='btn btn-primary'>Оставить заявку</button>
+          </div>
         </div>
       </div>
     )

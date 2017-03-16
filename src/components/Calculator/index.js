@@ -28,7 +28,7 @@ class Wrapper extends Component {
             <h2 className='section-heading'>Расчет цены</h2>
             <hr className='primary' />
           </div>
-          <div className='wizard step-progress text-left col'>
+          <div className='wizard step-progress text-left col no-plr'>
             <StepZilla steps={ steps }
                        preventEnterSubmission={ true }
                        stepsNavigation={ false }
