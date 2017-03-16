@@ -22,7 +22,7 @@ class Calculator extends Component {
 
     // wizzard data
     const tabs = [
-      { id: 'boiler', name: 'Кательная', data: getProductsByCategories(['boiler', 'boiler-piping'], products) },
+      { id: 'boiler', name: 'Кательная', data: getProductsByCategories(['boiler', 're-boiler', 'boiler-piping'], products) },
       { id: 'chimney', name: 'Дымоход', data: getProductsByCategories(['chimney'], products) },
       { id: 'heating', name: 'Отопление', data: getProductsByCategories(['heating'], products) },
       { id: 'canalisation', name: 'Канализация', data: getProductsByCategories(['canalisation'], products) },

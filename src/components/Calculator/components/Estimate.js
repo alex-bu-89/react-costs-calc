@@ -97,11 +97,11 @@ class Estimate extends Component {
 
           <div className='container text-center control-estimate'>
             <button type='button'
-                    className='btn btn-primary'
+                    className='btn btn-primary btn-outline-secondary'
                     onClick={ () => this.props.jumpToStep(0) }>Вернуться к расчету</button>
 
             <button type='button'
-                    className='btn btn-primary'>Распечатать</button>
+                    className='btn btn-primary btn-outline-secondary'>Распечатать</button>
 
             <button type='button'
                     className='btn btn-primary'>Оставить заявку</button>
