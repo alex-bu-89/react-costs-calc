@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-scroll'
 import _ from 'lodash'
 import { getProductsByCategories, formatMoney } from './../utils'
 
@@ -96,9 +97,11 @@ class Estimate extends Component {
           </table>
 
           <div className='container text-center control-estimate'>
-            <button type='button'
-                    className='btn btn-primary btn-outline-secondary'
-                    onClick={ () => this.props.jumpToStep(0) }>Вернуться к расчету</button>
+            <Link to='calculator' spy={true} smooth={true} offset={0} duration={1000}>
+              <button type='button'
+                      className='btn btn-primary btn-outline-secondary'
+                      onClick={ () => this.props.jumpToStep(0) }>Вернуться к расчету</button>
+            </Link>
 
             <button type='button'
                     className='btn btn-primary btn-outline-secondary'>Распечатать</button>

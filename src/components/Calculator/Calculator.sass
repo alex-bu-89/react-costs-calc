@@ -49,6 +49,14 @@
       margin: 0 15px
       padding: 5px 10px
 
+    @include media-breakpoint-down(md)
+      .form-control
+        margin-left: 0
+
+      .col-form-label
+        display: block
+
+
   .tab-wrapper
     padding: 20px
     border: 3px solid $primary-color
@@ -60,6 +68,9 @@
       border-radius: 0
       border: 3px solid transparent
       color: #979797
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
 
     .nav-item
       margin-bottom: -3px

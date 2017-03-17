@@ -24,15 +24,16 @@ class Calculator extends Component {
     const tabs = [
       { id: 'boiler', name: 'Кательная', data: getProductsByCategories(['boiler', 're-boiler', 'boiler-piping'], products) },
       { id: 'chimney', name: 'Дымоход', data: getProductsByCategories(['chimney'], products) },
-      { id: 'heating', name: 'Отопление', data: getProductsByCategories(['heating'], products) },
+      { id: 'heating', name: 'Теплые полы', data: getProductsByCategories(['heating'], products) },
+      { id: 'rad-heating', name: 'Отопление', data: getProductsByCategories(['rad-heating'], products) },
+      { id: 'water-system', name: 'Водоснабжение', data: getProductsByCategories(['water-system'], products) },
+      { id: 'bore', name: 'Скважина', data: getProductsByCategories(['bore'], products) },
       { id: 'canalisation', name: 'Канализация', data: getProductsByCategories(['canalisation'], products) },
-      { id: 'water-system', name: 'Водоснабжение', data: getProductsByCategories(['water-system', 'water-treatment'], products) },
-      { id: 'external-work', name: 'Наружные работы', data: getProductsByCategories(['external-works'], products) },
     ]
 
     return (
       <section id='calculator' name='calculator'>
-        <ul className='nav nav-tabs' role='tablist'>
+        <ul className='nav nav-tabs flex-wrap' role='tablist'>
           {
             tabs.map((tab, i) => {
               return(

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Product from './Product'
+import { Link } from 'react-scroll'
 
 class Fieldset extends Component {
 
@@ -42,9 +43,11 @@ class Fieldset extends Component {
           }
         </table>
         <div className='container text-center control-calc-box'>
-          <button type='button'
-                  className='btn btn-primary'
-                  onClick={ () => this.jumpToStep(1) }>Рассчитать смету</button>
+          <Link to='calculator' spy={true} smooth={true} offset={0} duration={1000}>
+            <button type='button'
+                    className='btn btn-primary'
+                    onClick={ () => this.jumpToStep(1) }>Рассчитать смету</button>
+          </Link>
         </div>
       </div>
     )

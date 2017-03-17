@@ -17,34 +17,34 @@ const products = [
   { sku:'13', title: 'Обвязка котельной сталью', category: { id: 'boiler-piping', title: 'Обвязка котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   { sku:'14', title: 'Автоматика погодазависамая', category: { id: 'boiler-piping', title: 'Обвязка котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   { sku:'15', title: 'Автоматика (бойлер, теплый пол, радиаторы)', category: { id: 'boiler-piping', title: 'Обвязка котельной' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
-  // BOILER PIPING
-  { sku:'16', title: 'Коаксиальный', category: { id: 'chimney', title: 'Выбор дымохода' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
-  { sku:'17', title: 'Сендвич (нержавейка)', category: { id: 'chimney', title: 'Выбор дымохода' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'м²' }, description: '', img_src: '#' },
-  { sku:'18', title: 'Проход перекрытий или стен газобетон-дерево', category: { id: 'chimney', title: 'Выбор дымохода' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  { sku:'19', title: 'Проход перекрытий или стен кирпич-бетон', category: { id: 'chimney', title: 'Выбор дымохода' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
+  // CHIMNEY
+  { sku:'16', title: 'Коаксиальный дымоход в деревянной стене или каркас', category: { id: 'chimney', title: 'Дымоход' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
+  { sku:'17', title: 'Коаксиальный дымоход в бетонной стене', category: { id: 'chimney', title: 'Дымоход' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox'}, description: '', img_src: '#' },
+  { sku:'18', title: 'Дымоход модульный (сэндвич) "Эконом"', category: { id: 'chimney', title: 'Дымоход' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
+  { sku:'19', title: 'Дымоход модульный (сэндвич) "Вулкан"', category: { id: 'chimney', title: 'Дымоход' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
+  { sku:'20', title: 'Подключение к существующему дымоходу', category: { id: 'chimney', title: 'Дымоход' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
   // HEATING
-  { sku:'20', title: 'Количество радиаторов', category: { id: 'heating', title: 'Выбор отопительных приборов в помещениях' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  { sku:'22', title: 'Количество напольных конвекторов', category: { id: 'heating', title: 'Выбор отопительных приборов в помещениях' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  { sku:'23', title: 'Количество помещений с теплым полом', category: { id: 'heating', title: 'Выбор отопительных приборов в помещениях' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  { sku:'24', title: 'Площадь теплого пола', category: { id: 'heating', title: 'Выбор отопительных приборов в помещениях' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'м²' }, description: '', img_src: '#' },
-  { sku:'25', title: 'Полусухая стяжка теплого пола', category: { id: 'heating', title: 'Выбор отопительных приборов в помещениях' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
-  // CANALIZATION
-  { sku:'26', title: 'Количество точек по дому', category: { id: 'canalisation', title: 'Канализация внутри дома' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  { sku:'27', title: 'Проходка через стены / перекрытия, материал дерево-газобетон', category: { id: 'canalisation', title: 'Канализация внутри дома' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  { sku:'28', title: 'Проходка через стены / перекрытия, материал керпич-бетон', category: { id: 'canalisation', title: 'Канализация внутри дома' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
+  { sku:'21', title: 'Площадь отапливаемых помещений', category: { id: 'heating', title: 'Теплые полы' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'м²' }, description: '', img_src: '#' },
+  { sku:'22', title: 'Количество отпапливаемых помещений', category: { id: 'heating', title: 'Теплые полы' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
+  { sku:'23', title: 'Монтаж стяжки теплого пола машинным способом', category: { id: 'heating', title: 'Теплые полы' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'м²' }, description: '', img_src: '#' },
+  // RADIATOR HEATING
+  { sku:'24', title: 'Настенные радиаторы', category: { id: 'rad-heating', title: 'Радиаторное отопление' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
+  { sku:'25', title: 'Встроенные конвекторы в пол', category: { id: 'rad-heating', title: 'Радиаторное отопление' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
   // WATER SYSTEM
-  { sku:'29', title: 'Количество точек по дому', category: { id: 'water-system', title: 'Водоснабжение внутри дома' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  { sku:'30', title: 'Проходка через стены / перекрытия, материал дерево-газобетон', category: { id: 'water-system', title: 'Водоснабжение внутри дома' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  { sku:'31', title: 'Проходка через стены / перекрытия, материал кирпич-бетон', category: { id: 'water-system', title: 'Водоснабжение внутри дома' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  // WATER TREATMENT
-  { sku:'32', title: 'Монтаж корпуса фильтра bigblue', category: { id: 'water-treatment', title: 'Выбор системы водоподготовки' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  { sku:'33', title: 'Монтаж умягчителя waterboss', category: { id: 'water-treatment', title: 'Выбор системы водоподготовки' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  { sku:'34', title: 'Монтаж системы фильтрации колонного типа', category: { id: 'water-treatment', title: 'Выбор системы водоподготовки' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
-  // EXTERNAL-WORKS
-  { sku:'35', title: 'Монтаж СБО Юнилос-астра 5', category: { id: 'external-works', title: 'Наружние работы' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
-  { sku:'36', title: 'Монтаж вентиляционного стояка канализации', category: { id: 'external-works', title: 'Наружние работы' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
-  { sku:'37', title: 'Монтаж скавжинного насоса с адаптером', category: { id: 'external-works', title: 'Наружние работы' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
-  { sku:'38', title: 'Монтаж скважинного насоса с кессоном', category: { id: 'external-works', title: 'Наружние работы' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
+  { sku:'26', title: 'Колличество приборов', category: { id: 'water-system', title: 'Водоснабжение' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
+  { sku:'27', title: 'Колличество полотенцесушителей на рециркуляции', category: { id: 'water-system', title: 'Водоснабжение' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
+  { sku:'28', title: 'Монтаж электрического водонагревателя', category: { id: 'water-system', title: 'Водоснабжение' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
+  { sku:'29', title: 'Рециркуляция ГВС', category: { id: 'water-system', title: 'Водоснабжение' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
+
+  // BORE
+  { sku:'30', title: 'Обвязка скважины до 50 метров', category: { id: 'bore', title: 'Скважина' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
+  { sku:'31', title: 'Обвязка колодца', category: { id: 'bore', title: 'Скважина' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
+  { sku:'32', title: 'Монтаж системы фильтрации Watter Boss 700', category: { id: 'bore', title: 'Скважина' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
+  { sku:'33', title: 'Обвязка буфферного бака (низкий дебет)', category: { id: 'bore', title: 'Скважина' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
+  // CANALIZATION
+  { sku:'34', title: 'Количество приборов', category: { id: 'canalisation', title: 'Канализация' }, price: { regular: 1000, service: 100 }, form: { type: 'number', label: 'шт.' }, description: '', img_src: '#' },
+  { sku:'35', title: 'Монтаж СБО под ключ', category: { id: 'canalisation', title: 'Канализация' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
+  { sku:'36', title: 'Продух для СБО', category: { id: 'canalisation', title: 'Канализация' }, price: { regular: 1000, service: 100 }, form: { type: 'checkbox' }, description: '', img_src: '#' },
 ]
 
 export default products

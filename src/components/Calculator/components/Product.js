@@ -171,7 +171,7 @@ class Product extends Component {
                      onBlur={ this.handleInputChange.bind(this) }
                      onChange={ this.validateInput.bind(this) } />
 
-              <label className='col-form-label' htmlFor={ this.product.category.id + '-' + this.product.sku }>
+              <label className='' htmlFor={ this.product.category.id + '-' + this.product.sku }>
                 { this.product.form.label }
               </label>
             </td>
