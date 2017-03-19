@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { browserHistory, Router } from 'react-router'
+import { browserHistory, hashHistory, Router } from 'react-router' // browserHistory doesn't work as static app http://stackoverflow.com/a/37557805
 import { Provider } from 'react-redux'
 
 class AppContainer extends Component {
