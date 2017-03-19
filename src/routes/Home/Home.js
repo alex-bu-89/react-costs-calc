@@ -4,6 +4,7 @@ import Footer from '../../components/Footer/'
 import Calculator from '../../components/Calculator/'
 import Portfolio from '../../components/Portfolio/'
 import About from '../../components/About/'
+import { Map, Marker, MarkerLayout } from 'yandex-map-react';
 
 import img1 from './assets/1.jpg'
 import img2 from './assets/2.jpg'
@@ -98,6 +99,24 @@ export const HomeView = () => (
 
     {/* ------ ABOUT ------ */}
     <About />
+
+    { /* MAP */ }
+    <div className='container'>
+      <div className='row'>
+        <div className='col-lg-12 text-center'>
+          <h2 className='section-heading'>Мы на карте</h2>
+          <hr className='primary' />
+        </div>
+      </div>
+    </div>
+    <Map center={ [59.628552564589036, 30.401207999999986] }
+         zoom={ 12 }
+         width='100%'
+         height='400px'>
+
+          <Marker lat={ 59.628552564589036 } lon={ 30.401207999999986 } />
+
+    </Map>
 
     {/* ------ FOOTER ------ */}
     <Footer />

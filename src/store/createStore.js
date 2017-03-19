@@ -9,8 +9,13 @@ export default (initialState = {}) => {
   // ======================================================
   // Middleware Configuration
   // ======================================================
-  const logger = createLogger()
-  const middleware = [thunk, logger]
+  let middleware = [thunk]
+
+  // add logger only on production
+  if (__DEV__) {
+    const logger = createLogger()
+    middleware.push(logger)
+  }
 
   // ======================================================
   // Store Enhancers

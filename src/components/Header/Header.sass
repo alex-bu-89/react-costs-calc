@@ -93,7 +93,14 @@
   // ---------------------------
   #navigation
 
+    // .navbar-toggler
+    //   border-color: #fff
+    //
+    // .navbar-toggler-icon
+    //   background-image: url(data:image/svg+xml;charset=utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/></svg>)
+
     ul.navbar-nav
+
       &:hover
         cursor: pointer
 
@@ -104,6 +111,21 @@
         &:hover,
         &.active
           border-bottom: 2px solid rgba(255,255,255,1)
+
+      @include media-breakpoint-down(md)
+        @include background-opacity($primary-color, .9)
+
+        li
+          border: 0
+
+          &:hover,
+          &.active,
+          &:focus,
+            border: 0
+            background-color: $primary-color-dark
+
+          .nav-link
+            padding: 15px 0
 
     // absolute before scrolling
     &.fixed-top
@@ -144,6 +166,10 @@
     height: 30px
     background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjkgMTI5IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KICA8Zz4KICAgIDxwYXRoIGQ9Im0xMjEuMywzNC42Yy0xLjYtMS42LTQuMi0xLjYtNS44LDBsLTUxLDUxLjEtNTEuMS01MS4xYy0xLjYtMS42LTQuMi0xLjYtNS44LDAtMS42LDEuNi0xLjYsNC4yIDAsNS44bDUzLjksNTMuOWMwLjgsMC44IDEuOCwxLjIgMi45LDEuMiAxLDAgMi4xLTAuNCAyLjktMS4ybDUzLjktNTMuOWMxLjctMS42IDEuNy00LjIgMC4xLTUuOHoiIGZpbGw9IiNGRkZGRkYiLz4KICA8L2c+Cjwvc3ZnPgo=')
     background-size: contain
+    padding: 15px
+
+    &:hover
+      cursor: pointer
 
   .bounce
     animation-name: bounce

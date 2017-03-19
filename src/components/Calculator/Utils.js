@@ -39,7 +39,7 @@ export function getProductPrice(products) {
   }
 
   _.map(products, (product) => {
-   price.products_price += product.price.total
+   price.products_price += product.price.regular * product.quantity
    price.service_price += product.price.service
   })
 

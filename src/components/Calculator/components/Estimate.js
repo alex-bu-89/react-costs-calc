@@ -15,26 +15,34 @@ class Estimate extends Component {
       service_price: this.props.state.calculator.service_price,
       total_price: this.props.state.calculator.total_price
     }
-  }
 
-  componentWillUpdate(nextProps) {
-    this.categories = this.getProductsByCategories(nextProps.state.calculator.products)
-
-    this.price = {
-      products_price: nextProps.state.calculator.products_price,
-      service_price: nextProps.state.calculator.service_price,
-      total_price: nextProps.state.calculator.total_price
+    this.state = {
+      categories: [],
+      price: {}
     }
   }
 
   componentWillMount() {
-    this.categories = this.getProductsByCategories(this.props.state.calculator.products)
+    console.log(this.props.state.calculator);
+    this.setState({
+      categories: this.getProductsByCategories(this.props.state.calculator.products),
+      price: {
+        products_price: this.props.state.calculator.products_price,
+        service_price: this.props.state.calculator.service_price,
+        total_price: this.props.state.calculator.total_price
+      }
+    })
+  }
 
-    this.price = {
-      products_price: this.props.state.calculator.products_price,
-      service_price: this.props.state.calculator.service_price,
-      total_price: this.props.state.calculator.total_price
-    }
+  componentWillUpdate(nextProps) {
+    this.setState({
+      categories: this.getProductsByCategories(nextProps.state.calculator.products),
+      price: {
+        products_price: nextProps.state.calculator.products_price,
+        service_price: nextProps.state.calculator.service_price,
+        total_price: nextProps.state.calculator.total_price
+      }
+    })
   }
 
  /**
@@ -62,7 +70,7 @@ class Estimate extends Component {
                 </tr>
               </thead>
               {
-                this.categories.map((category, i) => {
+                this.state.categories.map((category, i) => {
                   return (
                     <tbody key={i}>
                       <tr>
@@ -73,9 +81,9 @@ class Estimate extends Component {
                         category.products.map((product, y) => {
                           return (
                             <tr className='products' key={y}>
-                              <td>{ product.title + ((product.form.value) ? ' x ' + product.form.value + ' ' + product.form.label : '') }</td>
+                              <td>{ product.title + ((product.quantity > 1) ? ' x ' + product.quantity + ' ' + product.form.label : '') }</td>
                               <td className='text-center'>{ product.price.service + ' руб.' }</td>
-                              <td className='text-center'>{ product.price.total + ' руб.' }</td>
+                              <td className='text-center'>{ product.price.regular * product.quantity + ' руб.' }</td>
                             </tr>
                           )
                         })
@@ -88,9 +96,9 @@ class Estimate extends Component {
                 <tr className='text-center price-total'>
                   <td colSpan='3'>
                     <hr />
-                    <p>Стоимость оборудования: { formatMoney(this.price.products_price) } руб.</p>
-                    <p>Стоимость работ: { formatMoney(this.price.service_price) } руб.</p>
-                    <p className='lead'>Общая стоимость: { formatMoney(this.price.total_price) } руб.</p>
+                    <p>Стоимость оборудования: { formatMoney(this.state.price.products_price) } руб.</p>
+                    <p>Стоимость работ: { formatMoney(this.state.price.service_price) } руб.</p>
+                    <p className='lead'>Общая стоимость: { formatMoney(this.state.price.total_price) } руб.</p>
                   </td>
                 </tr>
             </tbody>

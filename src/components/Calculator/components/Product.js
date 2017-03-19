@@ -18,9 +18,6 @@ class Product extends Component {
     this._removeProduct = props.removeProduct
     this._updateProduct = props.updateProduct
 
-    // crate final price
-    this.product.price.total = parseFloat(this.product.price.regular)
-
     // component state
     this.state = { checked: false, value: '' }
   }
@@ -30,7 +27,8 @@ class Product extends Component {
     const products = this.props.state.calculator.products
     products.map((product) => {
       if (product.sku === this.product.sku) {
-        this.setState({ checked: true, value: product.form.value })
+        this.product = product
+        this.setState({ checked: true, value: product.quantity })
       }
     })
   }
@@ -85,13 +83,12 @@ class Product extends Component {
     let value = e.target.value
 
     // exit if value is not a valid number
-    if (isNaN(parseFloat(value))) {
+    if (isNaN(parseInt(value))) {
       this.setState({ value: value = 0 })
     }
 
     // parse string as number
-    value = parseFloat(value)
-    this.setState({ value: value })
+    value = parseInt(value)
 
     // validate number
     if (value > MAX_INPUT) {
@@ -101,8 +98,8 @@ class Product extends Component {
     }
 
     // add value and final price to product
-    this.product.form.value = value
-    this.product.price.total = value * parseFloat(this.product.price.regular)
+    this.setState({ value: value })
+    this.product.quantity = value
 
     // remove product if value is null and already exist in the state
     if (value == 0) {
