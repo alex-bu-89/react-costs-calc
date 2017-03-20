@@ -49,7 +49,7 @@
       }
     },
     "deploy:prod": {
-      "command": "npm run deploy",
+      "command": "npm run deploy && expect deploy.sh",
       "env": {
         "NODE_ENV": "production",
         "DEBUG": "app:*"

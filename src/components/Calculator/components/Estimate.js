@@ -23,7 +23,6 @@ class Estimate extends Component {
   }
 
   componentWillMount() {
-    console.log(this.props.state.calculator);
     this.setState({
       categories: this.getProductsByCategories(this.props.state.calculator.products),
       price: {

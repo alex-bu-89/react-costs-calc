@@ -9,20 +9,14 @@ class PortfolioItems extends Component {
     this.item = this.props.item
   }
 
-  componentDidUpdate(nextProps, nextState) {
-    console.log(nextState);
-  }
-
   openSlider(e) {
     e.stopPropagation()
-    console.log('_openSlider');
     document.body.classList.add('no-scroll') // TODO refactor
     this.setState({ showSlider: true })
   }
 
   closeSlider(e) {
     e.stopPropagation()
-    console.log('_closeSlider');
     document.body.classList.remove('no-scroll') // TODO refactor
     this.setState({ showSlider: false })
   }
