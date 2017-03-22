@@ -9,7 +9,6 @@ class Estimate extends Component {
   constructor(props) {
     super(props)
 
-    this.categories = []
     this.price = {
       products_price: this.props.state.calculator.products_price,
       service_price: this.props.state.calculator.service_price,
