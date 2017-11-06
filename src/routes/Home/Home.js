@@ -4,7 +4,7 @@ import Footer from '../../components/Footer/'
 import Calculator from '../../components/Calculator/'
 import Portfolio from '../../components/Portfolio/'
 import About from '../../components/About/'
-import { Map, Marker, MarkerLayout } from 'yandex-map-react';
+import { Map, Marker } from 'yandex-map-react'
 
 import img1 from './assets/1.jpg'
 import img2 from './assets/2.jpg'
